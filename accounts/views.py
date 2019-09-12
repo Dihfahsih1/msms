@@ -1226,7 +1226,7 @@ def studentsinaclass6(request):
     return render(request, 'accounts/StudentClass/view_form_six_students.html', context)
 
       ################################################
-    #     STUDENT  VIEWING HIS OR HER CLASS SUBJECTS   
+    #     STUDENT  VIEWING HIS OR HER CLASS SUBJECTS
 def subjectsinaclass1(request):
     all_classes=Classinformation.objects.all()
     all_subjects = Subjects.objects.filter(Class=all_classes[0])
@@ -1270,8 +1270,7 @@ def viewsinglesubjectsinclassdetails(request, pk):
 
 
       ################################################
-    #     STUDENT  VIEWING HIS SYLLABUS               #
-      ################################################
+    #     STUDENT  VIEWING HIS SYLLABUS               
 def syllabusofclass1(request):
     all_classes=Classinformation.objects.all()
     all_info = Syllabus.objects.filter(Class=all_classes[0])
