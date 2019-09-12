@@ -243,7 +243,7 @@ def viewassignment(request):
     return render(request, 'accounts/Assignment/viewassignment.html', context)
 
 #######################################
-#   CRUD FOR THE EXAM GRADE MODULE  
+#   CRUD FOR THE EXAM GRADE MODULE
 def addexamgrade(request):
     if request.method=="POST":
         form=AddExamGradeForm(request.POST,request.FILES)
@@ -278,8 +278,7 @@ def viewexamgrade(request):
 
 
 #######################################
-#   CRUD FOR THE EXAM TERM MODULE    #
-#######################################
+#   CRUD FOR THE EXAM TERM MODULE   
 def addexamterm(request):
     if request.method=="POST":
         form=AddExamTermForm(request.POST,request.FILES)
