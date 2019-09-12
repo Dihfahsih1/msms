@@ -518,7 +518,7 @@ def viewhostel(request):
     return render(request, 'accounts/Hostel/viewhostel.html', context)
 
  ################################################
-#   CRUD FOR THE HOSTEL ROOM MODULE           
+#   CRUD FOR THE HOSTEL ROOM MODULE
 def addroom(request):
    if request.method=="POST":
        form=AddHostelRoomForm(request.POST,request.FILES)
@@ -553,8 +553,7 @@ def viewroom(request):
    return render(request, 'accounts/Hostel/viewhostelroom.html', context)
 
  ################################################
-#   CRUD FOR THE VISITOR INFO MODULE              #
- ################################################
+#   CRUD FOR THE VISITOR INFO MODULE              
 def addvisitor(request):
    if request.method=="POST":
        form=AddVistorInfoForm(request.POST,request.FILES)
