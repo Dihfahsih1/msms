@@ -1177,10 +1177,22 @@ def singlestudentdetails(request, pk):
     return render(request, 'accounts/Students/singlestudentdetails.html', context)
 
 def guardianofstudentdetails(request, pk):
-    guardian_info = Guardian.objects.get(pk=1)
-    all_info = guardian_info.guardian.all()
-    context={'all_info':all_info}
-    return render(request, 'accounts/Students/guardianofstudentdetails.html', context)
+    all_guardian_info = Guardian.objects.all()
+    j=[]
+    for i in all_guardian_info:
+        Name =i.name
+        j.append(Name)
+        print(j)
+    all_info = DataStudent.objects.all()
+    f=[]
+    for i in all_info:
+        Name = i.Guardian
+        f.append(Name)
+        print(f)
+    if j==f:
+        context={'all_guardian_info':all_guardian_info}
+        return render(request, 'accounts/Students/guardianofstudentdetails.html', context)
+    return render(request, 'accounts/Students/guardianofstudentdetails.html')
 
 def parentofstudentdetails(request, pk):
     all_info = DataStudent.objects.filter(id=pk)
