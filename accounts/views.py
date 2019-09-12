@@ -43,7 +43,7 @@ def viewclassinformation(request):
     return render(request, 'accounts/Class/viewclassinformation.html', context)
 
 #######################################
-# THE CRUD OPERATIONS ON SECTION MODULE 
+# THE CRUD OPERATIONS ON SECTION MODULE
 def createsectioninformation(request):
     if request.method=="POST":
         form=SectioninformationForm(request.POST)
@@ -72,8 +72,7 @@ def viewsectioninformation(request):
 
 
   #######################################
-#   CRUD FOR THE SUBJECT MODULE          #
-  #######################################
+#   CRUD FOR THE SUBJECT MODULE         
 def addsubject(request):
     if request.method=="POST":
         form=AddSubjectForm(request.POST)
