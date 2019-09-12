@@ -1168,8 +1168,7 @@ def studentattendance(request):
     return render(request, 'accounts/Attendance/studentattendance.html', context)
 
   ################################################
-#         SINGLE STUDENT INFORMATION               #
-  ################################################
+#         SINGLE STUDENT INFORMATION             
 def singlestudentdetails(request, pk):
 
     all_info = DataStudent.objects.filter(id=pk)
