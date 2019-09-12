@@ -413,7 +413,7 @@ def viewlibrarybook(request):
 
 
   #######################################
-#   CRUD FOR THE VEHICLE MODULE        
+#   CRUD FOR THE VEHICLE MODULE
 def addvehicle(request):
     if request.method=="POST":
         form=AddVehicleForm(request.POST,request.FILES)
@@ -448,8 +448,7 @@ def viewvehicle(request):
 
 
   #############################################
-#   CRUD FOR THE TRANSPORT ROUTE MODULE         #
-  #############################################
+#   CRUD FOR THE TRANSPORT ROUTE MODULE       
 def addroute(request):
     if request.method=="POST":
         form=AddRouteForm(request.POST,request.FILES)
