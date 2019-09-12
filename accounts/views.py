@@ -346,7 +346,7 @@ def viewexamschedule(request):
 
 
   #######################################
-#   CRUD FOR THE EXAM SUGGESTION MODULE  
+#   CRUD FOR THE EXAM SUGGESTION MODULE
 def addexamsuggestion(request):
     if request.method=="POST":
         form=AddExamSuggestionForm(request.POST,request.FILES)
@@ -379,8 +379,7 @@ def viewexamsuggestion(request):
     return render(request, 'accounts/Exam/viewexamsuggestion.html', context)
 
   #######################################
-#   CRUD FOR THE LIBRARY MODULE         #
-  #######################################
+#   CRUD FOR THE LIBRARY MODULE         
 def addlibrarybook(request):
     if request.method=="POST":
         form=AddLibraryBookForm(request.POST,request.FILES)
