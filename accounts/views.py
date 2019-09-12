@@ -908,7 +908,7 @@ def viewnotice(request):
    return render(request, 'accounts/Announcement/viewnotice.html', context)
 
 ################################################
-#   CRUD FOR THE NEWS MODULE            
+#   CRUD FOR THE NEWS MODULE
 def addnews(request):
    if request.method=="POST":
        form=AddNewsForm(request.POST,request.FILES)
@@ -943,8 +943,7 @@ def viewnews(request):
    return render(request, 'accounts/Announcement/viewnews.html', context)
 
 ################################################
-#   CRUD FOR THE HOLIDAYS MODULE                #
-################################################
+#   CRUD FOR THE HOLIDAYS MODULE               
 def addholiday(request):
    if request.method=="POST":
        form=AddHolidaysForm(request.POST,request.FILES)
