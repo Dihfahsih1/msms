@@ -943,7 +943,7 @@ def viewnews(request):
    return render(request, 'accounts/Announcement/viewnews.html', context)
 
 ################################################
-#   CRUD FOR THE HOLIDAYS MODULE               
+#   CRUD FOR THE HOLIDAYS MODULE
 def addholiday(request):
    if request.method=="POST":
        form=AddHolidaysForm(request.POST,request.FILES)
@@ -979,8 +979,7 @@ def viewholidays(request):
 
 
 ################################################
-#   CRUD FOR THE Profile MODULE                #
-################################################
+#   CRUD FOR THE Profile MODULE               
 def addprofile(request):
    if request.method=="POST":
        form=AddProfileForm(request.POST,request.FILES)
