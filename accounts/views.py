@@ -1308,7 +1308,7 @@ def syllabusofclass6(request):
     return render(request, 'accounts/Syllabus/view_class_syllabus.html', context)
 
  ################################################
-#     STUDENT  VIEWING HIS SYLLABUS             
+#     STUDENT  VIEWING HIS SYLLABUS
 def assignmentofclass1(request):
     all_classes=Classinformation.objects.all()
     all_info = Assignment.objects.filter(Class=all_classes[0])
@@ -1346,8 +1346,7 @@ def assignmentofclass6(request):
     return render(request, 'accounts/Assignment/view_class_assignment.html', context)
 
  ################################################
-#     STUDENT  VIEWING CLASS STREAMS             #
- ################################################
+#     STUDENT  VIEWING CLASS STREAMS            
 def streamsofclass1(request):
     all_classes=Classinformation.objects.all()
     all_info = Sectioninformation.objects.filter(NameOfClass=all_classes[0])
