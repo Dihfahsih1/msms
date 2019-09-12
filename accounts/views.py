@@ -588,7 +588,7 @@ def viewvisitor(request):
    return render(request, 'accounts/Visitor/viewvisitor.html', context)
 
  ################################################
-#   CRUD FOR THE SALARY GRADE INFO MODULE       
+#   CRUD FOR THE SALARY GRADE INFO MODULE
 def addsalarygrade(request):
    if request.method=="POST":
        form=AddSalaryGradeForm(request.POST,request.FILES)
@@ -623,8 +623,7 @@ def viewsalarygrade(request):
    return render(request, 'accounts/Payroll/viewsalarygrade.html', context)
 
  ################################################
-#   CRUD FOR THE DISCOUNT MODULE        #
- ################################################
+#   CRUD FOR THE DISCOUNT MODULE        
 def adddiscount(request):
    if request.method=="POST":
        form=AddDiscountForm(request.POST,request.FILES)
