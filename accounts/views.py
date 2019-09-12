@@ -15,7 +15,7 @@ def logout(request):
  return render(request, 'accounts/login.html')
 
  #######################################
-# THE CRUD OPERATIONS ON A CLASS MODULE  
+# THE CRUD OPERATIONS ON A CLASS MODULE
 def createclassinformation(request):
     if request.method=="POST":
         form=ClassinformationForm(request.POST)
@@ -43,8 +43,7 @@ def viewclassinformation(request):
     return render(request, 'accounts/Class/viewclassinformation.html', context)
 
 #######################################
-# THE CRUD OPERATIONS ON SECTION MODULE #
-#######################################
+# THE CRUD OPERATIONS ON SECTION MODULE 
 def createsectioninformation(request):
     if request.method=="POST":
         form=SectioninformationForm(request.POST)
