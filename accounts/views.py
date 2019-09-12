@@ -1177,7 +1177,7 @@ def singlestudentdetails(request, pk):
     return render(request, 'accounts/Students/singlestudentdetails.html', context)
 
 def guardianofstudentdetails(request, pk):
-    student_info = DataStudent.objects.get(pk=1)
+    student_info = Guardian.objects.get(id=pk)
     all_info = student_info.guardian.all()
     context={'all_info':all_info}
     return render(request, 'accounts/Students/guardianofstudentdetails.html', context)
