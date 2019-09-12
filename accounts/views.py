@@ -278,7 +278,7 @@ def viewexamgrade(request):
 
 
 #######################################
-#   CRUD FOR THE EXAM TERM MODULE   
+#   CRUD FOR THE EXAM TERM MODULE
 def addexamterm(request):
     if request.method=="POST":
         form=AddExamTermForm(request.POST,request.FILES)
@@ -311,8 +311,7 @@ def viewexamterm(request):
     return render(request, 'accounts/Exam/viewexamterm.html', context)
 
   #######################################
-#   CRUD FOR THE EXAM SCHEDULE MODULE    #
-  #######################################
+#   CRUD FOR THE EXAM SCHEDULE MODULE   
 def addexamschedule(request):
     if request.method=="POST":
         form=AddExamScheduleForm(request.POST,request.FILES)
