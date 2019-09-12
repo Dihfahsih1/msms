@@ -1015,7 +1015,7 @@ def viewprofile(request):
 
 
 ################################################
-#   CRUD FOR THE SCHOOL MODULE             
+#   CRUD FOR THE SCHOOL MODULE
 def addschool(request):
    if request.method=="POST":
        form=AddSchoolForm(request.POST,request.FILES)
@@ -1050,8 +1050,7 @@ def viewschools(request):
    return render(request, 'accounts/School/viewschools.html', context)
 
   #######################################
-#     CRUD FOR THE TEACHER MODULE        #
- #######################################
+#     CRUD FOR THE TEACHER MODULE     
 
 def createteacher(request):
     if request.method=="POST":
