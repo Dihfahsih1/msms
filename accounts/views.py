@@ -1187,7 +1187,7 @@ def parentofstudentdetails(request, pk):
     return render(request, 'accounts/Students/parentofstudentdetails.html', context)
 
       ################################################
-    #     STUDENT  VIEWING HIS OR HER CLASS           
+    #     STUDENT  VIEWING HIS OR HER CLASS
 
 def studentsinaclass1(request):
     all_classes=Classinformation.objects.all()
@@ -1226,8 +1226,7 @@ def studentsinaclass6(request):
     return render(request, 'accounts/StudentClass/view_form_six_students.html', context)
 
       ################################################
-    #     STUDENT  VIEWING HIS OR HER CLASS SUBJECTS   #
-      ################################################
+    #     STUDENT  VIEWING HIS OR HER CLASS SUBJECTS   
 def subjectsinaclass1(request):
     all_classes=Classinformation.objects.all()
     all_subjects = Subjects.objects.filter(Class=all_classes[0])
