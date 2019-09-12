@@ -873,7 +873,7 @@ def viewexpenditure(request):
    return render(request, 'accounts/Accounting/viewexpenditure.html', context)
 
 ################################################
-#   CRUD FOR THE NOTICE MODULE            
+#   CRUD FOR THE NOTICE MODULE
 def addnotice(request):
    if request.method=="POST":
        form=AddNoticeForm(request.POST,request.FILES)
@@ -908,8 +908,7 @@ def viewnotice(request):
    return render(request, 'accounts/Announcement/viewnotice.html', context)
 
 ################################################
-#   CRUD FOR THE NEWS MODULE                #
-################################################
+#   CRUD FOR THE NEWS MODULE            
 def addnews(request):
    if request.method=="POST":
        form=AddNewsForm(request.POST,request.FILES)
