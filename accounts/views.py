@@ -623,7 +623,7 @@ def viewsalarygrade(request):
    return render(request, 'accounts/Payroll/viewsalarygrade.html', context)
 
  ################################################
-#   CRUD FOR THE DISCOUNT MODULE        
+#   CRUD FOR THE DISCOUNT MODULE
 def adddiscount(request):
    if request.method=="POST":
        form=AddDiscountForm(request.POST,request.FILES)
@@ -658,8 +658,7 @@ def viewdiscount(request):
    return render(request, 'accounts/Accounting/viewdiscount.html', context)
 
 ################################################
-#   CRUD FOR THE FEE TYPE MODULE        #
-################################################
+#   CRUD FOR THE FEE TYPE MODULE        
 def addfeetype(request):
    if request.method=="POST":
        form=AddFeeTypeForm(request.POST,request.FILES)
