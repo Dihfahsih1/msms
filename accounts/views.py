@@ -732,7 +732,7 @@ def viewincome(request):
 
 
 ################################################
-#   CRUD FOR THE FEE EXPENDITURE MODULE      
+#   CRUD FOR THE FEE EXPENDITURE MODULE
 def addexpenditure(request):
    if request.method=="POST":
        form=AddExpenditureForm(request.POST,request.FILES)
@@ -767,8 +767,7 @@ def viewexpenditure(request):
    return render(request, 'accounts/Accounting/viewexpenditure.html', context)
 
 ################################################
-#   CRUD FOR THE EVENTS MODULE        #
-################################################
+#   CRUD FOR THE EVENTS MODULE    
 def addevents(request):
    if request.method=="POST":
        form=AddEventsForm(request.POST,request.FILES)
