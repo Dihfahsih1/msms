@@ -15,8 +15,7 @@ def logout(request):
  return render(request, 'accounts/login.html')
 
  #######################################
-# THE CRUD OPERATIONS ON A CLASS MODULE  #
- #######################################
+# THE CRUD OPERATIONS ON A CLASS MODULE  
 def createclassinformation(request):
     if request.method=="POST":
         form=ClassinformationForm(request.POST)
@@ -1519,7 +1518,7 @@ def load_students(request):
     return render(request, 'accounts/Accounting/students_dropdown_list.html', {'students': students})
 
 ################################################
-#   CRUD FOR THE FEE COLLECTION MODULE        
+#   CRUD FOR THE FEE COLLECTION MODULE
 def addfeecollection(request):
    if request.method=="POST":
        form=AddFeeCollectionForm(request.POST,request.FILES)
