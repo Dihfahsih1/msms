@@ -483,7 +483,7 @@ def viewroute(request):
 
 
   ################################################
-#   CRUD FOR THE HOSTEL INFORMATION MODULE     
+#   CRUD FOR THE HOSTEL INFORMATION MODULE
 def addhostel(request):
     if request.method=="POST":
         form=AddHostelForm(request.POST,request.FILES)
@@ -518,8 +518,7 @@ def viewhostel(request):
     return render(request, 'accounts/Hostel/viewhostel.html', context)
 
  ################################################
-#   CRUD FOR THE HOSTEL ROOM MODULE              #
- ################################################
+#   CRUD FOR THE HOSTEL ROOM MODULE           
 def addroom(request):
    if request.method=="POST":
        form=AddHostelRoomForm(request.POST,request.FILES)
