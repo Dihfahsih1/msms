@@ -1346,7 +1346,7 @@ def assignmentofclass6(request):
     return render(request, 'accounts/Assignment/view_class_assignment.html', context)
 
  ################################################
-#     STUDENT  VIEWING CLASS STREAMS            
+#     STUDENT  VIEWING CLASS STREAMS
 def streamsofclass1(request):
     all_classes=Classinformation.objects.all()
     all_info = Sectioninformation.objects.filter(NameOfClass=all_classes[0])
@@ -1385,8 +1385,7 @@ def streamsofclass6(request):
 
 
 ###############################################
-#   CRUD FOR THE GUARDIAN MODULE                #
-################################################
+#   CRUD FOR THE GUARDIAN MODULE                
 def addguardian(request):
     if request.method=="POST":
         form=AddGuardianForm(request.POST,request.FILES)
