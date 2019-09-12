@@ -1385,7 +1385,7 @@ def streamsofclass6(request):
 
 
 ###############################################
-#   CRUD FOR THE GUARDIAN MODULE                
+#   CRUD FOR THE GUARDIAN MODULE
 def addguardian(request):
     if request.method=="POST":
         form=AddGuardianForm(request.POST,request.FILES)
@@ -1510,8 +1510,7 @@ def search_student(request):
     return render(request, 'accounts/Students/Search/student_list.html', {'filter': student_filter})
 
 ################################################
-#   CRUD FOR THE FEE COLLECTION MODULE        #
-################################################
+#   CRUD FOR THE FEE COLLECTION MODULE        
 
 
 def load_students(request):
