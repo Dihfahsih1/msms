@@ -72,7 +72,7 @@ def viewsectioninformation(request):
 
 
   #######################################
-#   CRUD FOR THE SUBJECT MODULE         
+#   CRUD FOR THE SUBJECT MODULE
 def addsubject(request):
     if request.method=="POST":
         form=AddSubjectForm(request.POST)
@@ -107,8 +107,7 @@ def viewsubjects(request):
 
 
  #######################################
-#   CRUD FOR THE Syllabus MODULE        #
-#######################################
+#   CRUD FOR THE Syllabus MODULE        
 def addsyllabus(request):
     if request.method=="POST":
         form=AddSyllabusForm(request.POST,request.FILES)
