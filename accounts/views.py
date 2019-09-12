@@ -979,7 +979,7 @@ def viewholidays(request):
 
 
 ################################################
-#   CRUD FOR THE Profile MODULE               
+#   CRUD FOR THE Profile MODULE
 def addprofile(request):
    if request.method=="POST":
        form=AddProfileForm(request.POST,request.FILES)
@@ -1015,8 +1015,7 @@ def viewprofile(request):
 
 
 ################################################
-#   CRUD FOR THE SCHOOL MODULE                #
-################################################
+#   CRUD FOR THE SCHOOL MODULE             
 def addschool(request):
    if request.method=="POST":
        form=AddSchoolForm(request.POST,request.FILES)
