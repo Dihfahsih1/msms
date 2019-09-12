@@ -1270,7 +1270,7 @@ def viewsinglesubjectsinclassdetails(request, pk):
 
 
       ################################################
-    #     STUDENT  VIEWING HIS SYLLABUS               
+    #     STUDENT  VIEWING HIS SYLLABUS
 def syllabusofclass1(request):
     all_classes=Classinformation.objects.all()
     all_info = Syllabus.objects.filter(Class=all_classes[0])
@@ -1308,8 +1308,7 @@ def syllabusofclass6(request):
     return render(request, 'accounts/Syllabus/view_class_syllabus.html', context)
 
  ################################################
-#     STUDENT  VIEWING HIS SYLLABUS             #
- ################################################
+#     STUDENT  VIEWING HIS SYLLABUS             
 def assignmentofclass1(request):
     all_classes=Classinformation.objects.all()
     all_info = Assignment.objects.filter(Class=all_classes[0])
