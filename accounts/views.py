@@ -658,7 +658,7 @@ def viewdiscount(request):
    return render(request, 'accounts/Accounting/viewdiscount.html', context)
 
 ################################################
-#   CRUD FOR THE FEE TYPE MODULE        
+#   CRUD FOR THE FEE TYPE MODULE
 def addfeetype(request):
    if request.method=="POST":
        form=AddFeeTypeForm(request.POST,request.FILES)
@@ -696,8 +696,7 @@ def viewfeetype(request):
 
 
 ################################################
-#   CRUD FOR THE FEE INCOME MODULE        #
-################################################
+#   CRUD FOR THE FEE INCOME MODULE       
 def addincome(request):
    if request.method=="POST":
        form=AddIncomeForm(request.POST,request.FILES)
