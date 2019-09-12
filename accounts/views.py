@@ -696,7 +696,7 @@ def viewfeetype(request):
 
 
 ################################################
-#   CRUD FOR THE FEE INCOME MODULE       
+#   CRUD FOR THE FEE INCOME MODULE
 def addincome(request):
    if request.method=="POST":
        form=AddIncomeForm(request.POST,request.FILES)
@@ -732,8 +732,7 @@ def viewincome(request):
 
 
 ################################################
-#   CRUD FOR THE FEE EXPENDITURE MODULE        #
-################################################
+#   CRUD FOR THE FEE EXPENDITURE MODULE      
 def addexpenditure(request):
    if request.method=="POST":
        form=AddExpenditureForm(request.POST,request.FILES)
