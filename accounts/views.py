@@ -141,7 +141,7 @@ def viewsyllabus(request):
     return render(request, 'accounts/Syllabus/viewsyllabus.html', context)
 
  ###############################################
-#   CRUD FOR THE HUMAN RESOURCES MANAGER MODULE 
+#   CRUD FOR THE HUMAN RESOURCES MANAGER MODULE
 def addhumanresource(request):
     if request.method=="POST":
         form=AddHumanResourceForm(request.POST,request.FILES)
@@ -175,8 +175,7 @@ def viewhumanresource(request):
     return render(request, 'accounts/HumanResource/viewhumanresource.html', context)
 
  ###############################################
-############  CRUD FOR THE ROUTINE #############
- ###############################################
+############  CRUD FOR THE ROUTINE ##
 def addroutine(request):
     if request.method=="POST":
         form=AddRoutineForm(request.POST,request.FILES)
