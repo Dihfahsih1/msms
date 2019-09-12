@@ -209,8 +209,7 @@ def viewroutine(request):
     return render(request, 'accounts/Routine/viewroutine.html', context)
 
 #######################################
-#   CRUD FOR THE ASSIGNMENT MODULE    #
-#######################################
+#   CRUD FOR THE ASSIGNMENT MODULE   
 def addassignment(request):
     if request.method=="POST":
         form=AddAssignmentForm(request.POST,request.FILES)
