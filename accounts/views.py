@@ -448,7 +448,7 @@ def viewvehicle(request):
 
 
   #############################################
-#   CRUD FOR THE TRANSPORT ROUTE MODULE       
+#   CRUD FOR THE TRANSPORT ROUTE MODULE
 def addroute(request):
     if request.method=="POST":
         form=AddRouteForm(request.POST,request.FILES)
@@ -483,8 +483,7 @@ def viewroute(request):
 
 
   ################################################
-#   CRUD FOR THE HOSTEL INFORMATION MODULE         #
-  ################################################
+#   CRUD FOR THE HOSTEL INFORMATION MODULE     
 def addhostel(request):
     if request.method=="POST":
         form=AddHostelForm(request.POST,request.FILES)
