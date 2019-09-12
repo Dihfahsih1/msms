@@ -209,7 +209,7 @@ def viewroutine(request):
     return render(request, 'accounts/Routine/viewroutine.html', context)
 
 #######################################
-#   CRUD FOR THE ASSIGNMENT MODULE   
+#   CRUD FOR THE ASSIGNMENT MODULE
 def addassignment(request):
     if request.method=="POST":
         form=AddAssignmentForm(request.POST,request.FILES)
@@ -243,8 +243,7 @@ def viewassignment(request):
     return render(request, 'accounts/Assignment/viewassignment.html', context)
 
 #######################################
-#   CRUD FOR THE EXAM GRADE MODULE    #
-#######################################
+#   CRUD FOR THE EXAM GRADE MODULE  
 def addexamgrade(request):
     if request.method=="POST":
         form=AddExamGradeForm(request.POST,request.FILES)
