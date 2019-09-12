@@ -553,7 +553,7 @@ def viewroom(request):
    return render(request, 'accounts/Hostel/viewhostelroom.html', context)
 
  ################################################
-#   CRUD FOR THE VISITOR INFO MODULE              
+#   CRUD FOR THE VISITOR INFO MODULE
 def addvisitor(request):
    if request.method=="POST":
        form=AddVistorInfoForm(request.POST,request.FILES)
@@ -588,8 +588,7 @@ def viewvisitor(request):
    return render(request, 'accounts/Visitor/viewvisitor.html', context)
 
  ################################################
-#   CRUD FOR THE SALARY GRADE INFO MODULE        #
- ################################################
+#   CRUD FOR THE SALARY GRADE INFO MODULE       
 def addsalarygrade(request):
    if request.method=="POST":
        form=AddSalaryGradeForm(request.POST,request.FILES)
