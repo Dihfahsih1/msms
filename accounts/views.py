@@ -379,7 +379,7 @@ def viewexamsuggestion(request):
     return render(request, 'accounts/Exam/viewexamsuggestion.html', context)
 
   #######################################
-#   CRUD FOR THE LIBRARY MODULE         
+#   CRUD FOR THE LIBRARY MODULE
 def addlibrarybook(request):
     if request.method=="POST":
         form=AddLibraryBookForm(request.POST,request.FILES)
@@ -413,8 +413,7 @@ def viewlibrarybook(request):
 
 
   #######################################
-#   CRUD FOR THE VEHICLE MODULE         #
-  #######################################
+#   CRUD FOR THE VEHICLE MODULE        
 def addvehicle(request):
     if request.method=="POST":
         form=AddVehicleForm(request.POST,request.FILES)
