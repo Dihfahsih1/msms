@@ -52,6 +52,7 @@ color:blue;
         <p><b>Religion:  </b>{{ item.religion }}</p>
         <p><b>Current Address:  </b>{{ item.PresentAddress}}</p>
         <p><b>Permanent Address:  </b>{{ item.PermanentAddress }}</p>
+        <p><b>Guardian Profession:  </b>{{ item.profession }}</p>
       </div>
     </div>
   </div>
@@ -66,8 +67,8 @@ color:blue;
   <div class="col-md-4 col-sm-6 col-xs-6" style="float:right">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="text-default">Edit Parent's Data</h5>
-        <a href="{% url 'editstudent' pk=item.id  %}"><button  class="btn btn-success" name="button"> Edit </button></a>
+        <h5 class="text-default">Edit Guardian's Data</h5>
+        <a href="{% url 'editguardian' pk=item.id  %}"><button  class="btn btn-success" name="button"> Edit </button></a>
       </div>
     </div>
   </div>
