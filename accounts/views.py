@@ -1091,7 +1091,7 @@ def singleteacherdetails(request, pk):
     return render(request, 'accounts/Teachers/singleteacherdetails.html', context)
 
 ################################################
-#   CRUD FOR THE STUDENTS MODULE              
+#   CRUD FOR THE STUDENTS MODULE
 def addstudent(request):
     if request.method=="POST":
         form=AddStudentForm(request.POST,request.FILES)
@@ -1127,8 +1127,7 @@ def viewstudents(request):
     return render(request, 'accounts/Students/viewstudents.html', context)
 
   ################################################
-#         STUDENT ATTENDANCE MODULE               #
-  ################################################
+#         STUDENT ATTENDANCE MODULE               
 def studentattendance(request):
     time=datetime.now()
     queryset = StudentPresence.objects.all()
