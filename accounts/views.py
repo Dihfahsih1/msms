@@ -1137,16 +1137,23 @@ def studentattendance(request):
   ################################################
 #         SINGLE STUDENT INFORMATION
 def singlestudentdetails(request, pk):
-
+    guardian_info = Guardian.objects.get(id=pk)
+    print(guardian_info)
     all_info = DataStudent.objects.filter(id=pk)
-    context={'all_info':all_info}
-    return render(request, 'accounts/Students/singlestudentdetails.html', context)
-
+    for i in all_info:
+        print(i.name)
+        print(i.Class)
+        print(i.Guardian)
+        if guardian_info==i.Guardian:
+            context={'all_info':all_info}
+            return render(request, 'accounts/Students/singlestudentdetails.html', context)
+        return render(request, 'accounts/Students/singlestudentdetails.html')
 def guardianofstudentdetails(request, pk):
     students_info = DataStudent.objects.filter(id=pk)
-    all_info = Guardian.objects.filter(name=students_info.Guardian)
-    context={'all_info':all_info,'students_info':students_info}
-    return render(request, 'accounts/Students/guardianofstudentdetails.html', context)
+    for i in students_info:
+        all_info = Guardian.objects.filter(name=i.Guardian)
+        context={'all_info':all_info,'students_info':students_info}
+        return render(request, 'accounts/Students/guardianofstudentdetails.html', context)
 
 def parentofstudentdetails(request, pk):
     all_info = DataStudent.objects.filter(id=pk)
