@@ -1127,7 +1127,7 @@ def viewstudents(request):
     return render(request, 'accounts/Students/viewstudents.html', context)
 
   ################################################
-#         STUDENT ATTENDANCE MODULE               
+#         STUDENT ATTENDANCE MODULE
 def studentattendance(request):
     time=datetime.now()
     queryset = StudentPresence.objects.all()
@@ -1143,7 +1143,7 @@ def singlestudentdetails(request, pk):
     return render(request, 'accounts/Students/singlestudentdetails.html', context)
 
 def guardianofstudentdetails(request, pk):
-    students_info = DataStudent.objects.get(id=pk)
+    students_info = DataStudent.objects.filter(id=pk)
     all_info = Guardian.objects.filter(name=students_info.Guardian)
     context={'all_info':all_info,'students_info':students_info}
     return render(request, 'accounts/Students/guardianofstudentdetails.html', context)

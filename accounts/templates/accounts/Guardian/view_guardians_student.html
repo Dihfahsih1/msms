@@ -56,7 +56,7 @@
        <td>{{ item.admission_no}}</td>
        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
        <td>
-         <a class="btn btn-primary a-btn-slide-text" href="{% url 'singlestudentdetails' pk=item.id  %}" target="_blank"><span class="glyphicon glyphicon-eye-open"  aria-hidden="true"></span>
+         <a class="btn btn-primary a-btn-slide-text" href="{% url 'singlestudentdetails' pk=item.id  %}"><span class="glyphicon glyphicon-eye-open"  aria-hidden="true"></span>
         <span><strong>View</strong></span></a>
        </td>
         {% endfor %}
