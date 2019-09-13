@@ -1140,7 +1140,7 @@ def singlestudentdetails(request, pk):
     all_info = DataStudent.objects.filter(id=pk)
     context={'all_info':all_info}
     return render(request, 'accounts/Students/singlestudentdetails.html', context)
-def guardianofstudentdetails(request, guardian_id, student_id):
+def guardianofstudentdetails(request, pk):
     students_info = DataStudent.objects.filter(id=pk)
     for i in students_info:
         all_info = Guardian.objects.filter(name=i.Guardian)
