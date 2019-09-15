@@ -207,7 +207,8 @@ url(r'^deleteguardian/(?P<pk>\d+)', views.deleteguardian, name="deleteguardian")
 url(r'^viewguardians', views.viewguardians, name="viewguardians"),
 url(r'^singleguardiandetails/(?P<pk>\d+)', views.singleguardiandetails, name="singleguardiandetails"),
 
-url(r'^studentsofguardian/(?P<pk>\d+)', views.studentsofguardian, name="studentsofguardian"),
+url(r'^studentsofguardian/(?P<pk>\d+)', views.studentsofguardian, 
+	name="studentsofguardian"),
 
 url(r'^students_of_guardian_in_form_one', views.students_of_guardian_in_form_one, name="students_of_guardian_in_form_one"),
 url(r'^students_of_guardian_in_form_two', views.students_of_guardian_in_form_two, name="students_of_guardian_in_form_two"),
