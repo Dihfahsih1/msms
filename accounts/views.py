@@ -142,6 +142,7 @@ def viewsyllabus(request):
 
  ###############################################
 #   CRUD FOR THE HUMAN RESOURCES MANAGER MODULE
+#this includes updating, creating, deleting and viewing.
 def addhumanresource(request):
     if request.method=="POST":
         form=AddHumanResourceForm(request.POST,request.FILES)
