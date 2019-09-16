@@ -2,7 +2,6 @@ from django import forms
 from .models import *
 from django.forms.widgets import RadioSelect
 import django_filters
-from .widgets import XDSoftDateTimePickerInput
 class LoginForm(forms.ModelForm):
     class Meta:
         model = Login
@@ -304,7 +303,7 @@ class AddStudentForm(forms.ModelForm):
         'Father_Photo','Student_Photo','Mother_Photo','Birth_Date')
         labels = {'school':'Name of the School', 'name':'Name of the student','gender':'Gender of Student', 'religion':'Religion of      Student','Class':'Current Class of Student','stream':'Student Stream','admission_no':'Student Admission Number',
                   'admission_date':'Admission Date','Guardian':'Student Guardian','GuardianRelationshipToStudent':'Guardian Relationship To Student' }
-        widget={'admission_date': forms.XDSoftDateTimePickerInput()}        
+               
 class AddStudentAttendanceForm(forms.ModelForm):
     class Meta:
         model = StudentPresence
