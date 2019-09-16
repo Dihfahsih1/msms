@@ -124,12 +124,15 @@
 </div>
 </form>
 </div>
-<script>
-  $(function () {
-    $("#id_admission_date").datetimepicker({
-      format: 'd/m/Y',
-    });
-  });
+<script type="text/javascript">
+$(function () {
+    $('.datepicker').datetimepicker(
+    {
+        format: 'YYYY-MM-DD HH:mm:ss',
+        sideBySide: true
+    }
+    );
+});
 </script>
 </div>
 {% endblock %}

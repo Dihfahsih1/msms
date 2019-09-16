@@ -305,7 +305,7 @@ class AddStudentForm(forms.ModelForm):
                   'admission_date':'Admission Date','Guardian':'Student Guardian','GuardianRelationshipToStudent':'Guardian Relationship To Student' }
         def __init__(self, *args, **kwargs):
             super(AddStudentForm, self).__init__(*args, **kwargs)
-            self.fields['a'].widget.attrs['class'] = 'datepicker'   
+            self.fields['admission_date'].widget.attrs['class'] = 'datepicker'   
 
 class AddStudentAttendanceForm(forms.ModelForm):
     class Meta:
