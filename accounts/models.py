@@ -291,7 +291,7 @@ class DataStudent(models.Model):
     Class = models.ForeignKey(Classinformation, on_delete=models.PROTECT, blank=True, null=True)
     stream = models.ForeignKey(Sectioninformation, on_delete=models.PROTECT, blank=True, null=True)
     admission_no = models.CharField(max_length=130, default="nypefjhjhd")
-    admission_date = models.DateTimeField(max_length=100, default=timezone.now)
+    admission_date = models.DateField(max_length=100, default=timezone.now)
     Birth_Date= models.CharField(max_length=100, default="nyfjhjpd")
     Guardian = models.ForeignKey(Guardian,on_delete=models.PROTECT, related_name='guardian')
     GuardianRelationshipToStudent = models.CharField(max_length=130, choices=relation, default="text",blank=False)
