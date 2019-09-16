@@ -303,7 +303,10 @@ class AddStudentForm(forms.ModelForm):
         'Father_Photo','Student_Photo','Mother_Photo','Birth_Date')
         labels = {'school':'Name of the School', 'name':'Name of the student','gender':'Gender of Student', 'religion':'Religion of      Student','Class':'Current Class of Student','stream':'Student Stream','admission_no':'Student Admission Number',
                   'admission_date':'Admission Date','Guardian':'Student Guardian','GuardianRelationshipToStudent':'Guardian Relationship To Student' }
-               
+        def __init__(self, *args, **kwargs):
+            super(AddStudentForm, self).__init__(*args, **kwargs)
+            self.fields['a'].widget.attrs['class'] = 'datepicker'   
+
 class AddStudentAttendanceForm(forms.ModelForm):
     class Meta:
         model = StudentPresence

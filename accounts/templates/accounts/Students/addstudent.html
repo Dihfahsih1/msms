@@ -57,7 +57,7 @@
           <p>{{ form.stream |as_crispy_field }}</p>
           <p>{{ form.Class |as_crispy_field }}</p>
           <p>{{ form.admission_no|as_crispy_field }}</p>
-          <p id="id_admission_date">{{ form.admission_date|as_crispy_field }}</p>
+          <p>{{ form.admission_date|as_crispy_field }}</p>
           <p>{{ form.Transfer_Certificate |as_crispy_field }}</p>
          <p>{{ form.Student_Photo|as_crispy_field }}</p>
       </div>
@@ -127,7 +127,7 @@
 <script>
   $(function () {
     $("#id_admission_date").datetimepicker({
-      format: 'd/m/Y H:i',
+      format: 'd/m/Y',
     });
   });
 </script>
