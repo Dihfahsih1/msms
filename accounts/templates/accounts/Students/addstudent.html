@@ -124,6 +124,12 @@
 </div>
 </form>
 </div>
-
+<script>
+  $(function () {
+    $("#id_admission_date").datetimepicker({
+      format: 'd/m/Y H:i',
+    });
+  });
+</script>
 </div>
 {% endblock %}

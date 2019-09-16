@@ -2,6 +2,7 @@ from django import forms
 from .models import *
 from django.forms.widgets import RadioSelect
 import django_filters
+from .widgets import XDSoftDateTimePickerInput
 class LoginForm(forms.ModelForm):
     class Meta:
         model = Login
@@ -293,16 +294,17 @@ class EditSchoolForm(forms.ModelForm):
 class AddStudentForm(forms.ModelForm):
     class Meta:
         model = DataStudent
-        fields = ('school', 'name', 'username','gender', 'religion','Class','stream', 'admission_no',
-                  'admission_date','Guardian','GuardianRelationshipToStudent',
-                  'NationaId','phone','PresentAddress','PermanentAddress',
-                  'previous_school','previous_class',
-                  'FatherName','FatherPhone','FatherProfession','FatherDesignation',
-                  'MotherName','MotherPhone','MotherProfession','MotherDesignation',
-                  'email','password','health_condition','Transfer_Certificate',
-                  'Father_Photo','Student_Photo','Mother_Photo','Birth_Date')
+        fields = ('school', 'name', 'username','gender', 'religion','Class','stream','admission_no',
+        'admission_date','Guardian','GuardianRelationshipToStudent',
+        'NationaId','phone','PresentAddress','PermanentAddress',
+        'previous_school','previous_class',
+        'FatherName','FatherPhone','FatherProfession','FatherDesignation',
+        'MotherName','MotherPhone','MotherProfession','MotherDesignation',
+        'email','password','health_condition','Transfer_Certificate',
+        'Father_Photo','Student_Photo','Mother_Photo','Birth_Date')
         labels = {'school':'Name of the School', 'name':'Name of the student','gender':'Gender of Student', 'religion':'Religion of      Student','Class':'Current Class of Student','stream':'Student Stream','admission_no':'Student Admission Number',
                   'admission_date':'Admission Date','Guardian':'Student Guardian','GuardianRelationshipToStudent':'Guardian Relationship To Student' }
+        widget={'admission_date': forms.XDSoftDateTimePickerInput()}        
 class AddStudentAttendanceForm(forms.ModelForm):
     class Meta:
         model = StudentPresence
