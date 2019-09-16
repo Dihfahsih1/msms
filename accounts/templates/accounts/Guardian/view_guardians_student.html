@@ -12,7 +12,7 @@
       <a class="nav-link" href="{% url 'viewguardians' %}"><button class="btn btn-warning">All Guardians</button></a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="{% url 'singleguardiandetails' pk=item.id  %}"><button class="btn btn-primary">Guardian Details</button></a></li>
+      <a class="nav-link" href="{% url 'viewguardians' %}"><button class="btn btn-primary">Guardian Details</button></a></li>
       <li class="nav-item">
         {% for item in all_info %}
         {%if forloop.first %}
