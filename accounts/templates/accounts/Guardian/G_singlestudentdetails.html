@@ -57,7 +57,8 @@ color:blue;
           <p><b>Class:  </b>{{ item.Class }}</p>
           <p><b>Stream:  </b>{{ item.stream }}</p>
           <p><b>Previous School:  </b>{{ item.previous_school }}</p>
-          <p><b>Transfer Certificate:  </b><img src="{{ item.Transfer_Certificate.url }}"</p>
+          <p><b>Transfer Certificate:  </b> {% if item.Student_Photo %}<img src="{{ item.Transfer_Certificate.url}}" width="50">{% endif %} </p>
+
           <p><b>Email:  </b>{{ item.email }}</p>
 
       </div>
@@ -68,7 +69,7 @@ color:blue;
     <div class="card-body">
       <h5 class="text-warning">Other Information</h5>
       <p><b>Date of Joining:  </b>{{ item.admission_date }}</p>
-      <p><b>Photo:  </b><img src='{{item.Student_Photo.url}}'/></p>
+      <p><b>Photo:  </b> {% if item.Student_Photo %}<img src="{{ item.Student_Photo.url}}" width="50">{% endif %}</p>
       <p><b>Health Condition:  </b>{{ item.health_condition }}</p>
       <p><b>Password:  </b>{{ item.password }}</p>
       <p><b>Address:  </b>{{ item.PresentAddress }}</p>

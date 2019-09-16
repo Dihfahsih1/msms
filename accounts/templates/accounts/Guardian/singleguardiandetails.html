@@ -64,7 +64,7 @@ color:blue;
       <h5 class="text-warning">Other Information</h5>
       <p><b>Gender:  </b>{{ item.gender }}</p>
       <p><b>Other Infor:  </b>{{ item.Other_Info }}</p>
-      <p><b>Photo:  </b><img src='{{item.Photo.url}}'/></p>
+      <p><b>Photo:  </b> {% if item.Photo %}<img src="{{ item.Photo.url}}" width="50">{% endif %}</p>
 
     </div>
   </div>
