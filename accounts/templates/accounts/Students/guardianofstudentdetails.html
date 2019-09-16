@@ -9,7 +9,7 @@ color:blue;
 }
 </style>
 <div class="container" style="margin-left: 200px;font-size: 20px; padding: 0px 10px;">
-<br><h4>Guardian Of <b>{{ students_info.name}} </b> Information</h4><br>
+<br><h4>Guardian Of <b>{{ student.name}} </b> Information</h4><br>
 <hr style="margin-top: 1rem; margin-bottom: 1rem;border: 0; border-top: 1px solid rgba(0, 0, 0, 0.1);"/>
 <nav class="nav navbar-expand">
   <ul class="navbar-nav mr-auto">
@@ -45,13 +45,13 @@ color:blue;
       <div class="card-body">
         <h5 class="text-warning">Basic Information</h5>
         <p><b>Guardian Name:  </b>{{ item.name  }}</p>
-        <p><b>Relationship:  </b>{{ students_info.GuardianRelationshipToStudent }}</p>
+        <p><b>Relationship:  </b>{{ student.GuardianRelationshipToStudent }}</p>
         <p><b>Telephone:  </b>{{ item.phone }}</p>
         <p><b>Gender:  </b>{{ item.gender  }}</p>
-        <p><b>National Id:  </b>{{ item.NationaId}}</p>
+        <p><b>National Id:  </b>{{ item.National_Id}}</p>
         <p><b>Religion:  </b>{{ item.religion }}</p>
-        <p><b>Current Address:  </b>{{ item.PresentAddress}}</p>
-        <p><b>Permanent Address:  </b>{{ item.PermanentAddress }}</p>
+        <p><b>Current Address:  </b>{{ item.Present_Address}}</p>
+        <p><b>Permanent Address:  </b>{{ item.Permanent_Address }}</p>
         <p><b>Guardian Profession:  </b>{{ item.profession }}</p>
       </div>
     </div>
