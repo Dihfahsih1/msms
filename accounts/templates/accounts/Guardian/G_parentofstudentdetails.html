@@ -57,7 +57,7 @@ color:blue;
         <p><b>Telephone:  </b>{{ item.MotherPhone }}</p>
         <p><b>Profession:  </b>{{ item.MotherProfession }}</p>
         <p><b>Designation:  </b>{{ item.MotherDesignation  }}</p>
-        <p><b>Photo: </b> <img src='{{ item.Mother_Photo}}'</p>
+        <p><b>Photo: </b> {% if item.Mother_Photo %}<img src="{{ item.Mother_Photo.url}}" width="50">{% endif %}</p>
       </div>
     </div>
   </div>
