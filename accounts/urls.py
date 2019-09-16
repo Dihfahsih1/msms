@@ -163,6 +163,8 @@ url(r'^guardianofstudentdetails/(?P<pk>\d+)', views.guardianofstudentdetails, na
 url(r'^singleteacherdetails/(?P<pk>\d+)', views.singleteacherdetails, name="singleteacherdetails"),
 url(r'^singlestudentdetails/(?P<pk>\d+)', views.singlestudentdetails, name="singlestudentdetails"),
 url(r'^parentofstudentdetails/(?P<pk>\d+)', views.parentofstudentdetails, name="parentofstudentdetails"),
+url(r'^G_singlestudentdetails/(?P<pk>\d+)', views.G_singlestudentdetails, name="G_singlestudentdetails"),
+url(r'^G_parentofstudentdetails/(?P<pk>\d+)', views.G_parentofstudentdetails, name="G_parentofstudentdetails"),
 url(r'^studentsinaclass1', views.studentsinaclass1, name="studentsinaclass1"),
 url(r'^studentsinaclass2', views.studentsinaclass2, name="studentsinaclass2"),
 url(r'^studentsinaclass3', views.studentsinaclass3, name="studentsinaclass3"),
@@ -207,7 +209,7 @@ url(r'^deleteguardian/(?P<pk>\d+)', views.deleteguardian, name="deleteguardian")
 url(r'^viewguardians', views.viewguardians, name="viewguardians"),
 url(r'^singleguardiandetails/(?P<pk>\d+)', views.singleguardiandetails, name="singleguardiandetails"),
 
-url(r'^studentsofguardian/(?P<pk>\d+)', views.studentsofguardian, 
+url(r'^studentsofguardian/(?P<pk>\d+)', views.studentsofguardian,
 	name="studentsofguardian"),
 
 url(r'^students_of_guardian_in_form_one', views.students_of_guardian_in_form_one, name="students_of_guardian_in_form_one"),

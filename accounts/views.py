@@ -1141,6 +1141,10 @@ def singlestudentdetails(request, pk):
     all_info = DataStudent.objects.filter(id=pk)
     context={'all_info':all_info}
     return render(request, 'accounts/Students/singlestudentdetails.html', context)
+def G_singlestudentdetails(request, pk):
+    all_info = DataStudent.objects.filter(id=pk)
+    context={'all_info':all_info}
+    return render(request, 'accounts/Guardian/G_singlestudentdetails.html', context)
 def guardianofstudentdetails(request, pk):
     students_info = DataStudent.objects.filter(id=pk)
     for student in students_info:
@@ -1148,6 +1152,10 @@ def guardianofstudentdetails(request, pk):
         context={'all_info':all_info, 'student':student}
         return render(request, 'accounts/Students/guardianofstudentdetails.html', context)
 
+def G_parentofstudentdetails(request, pk):
+    all_info = DataStudent.objects.filter(id=pk)
+    context={'all_info':all_info}
+    return render(request, 'accounts/Guardian/G_parentofstudentdetails.html', context)
 def parentofstudentdetails(request, pk):
     all_info = DataStudent.objects.filter(id=pk)
     context={'all_info':all_info}

@@ -17,9 +17,9 @@ color:blue;
     <a class="nav-link" href="{% url 'viewstudents' %}"><button class="btn btn-warning">All Students</button></a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="{% url 'singlestudentdetails' pk=item.id  %}"><button class="btn btn-primary">Basic Information</button></a><li>
+    <a class="nav-link" href="{% url 'G_singlestudentdetails' pk=item.id  %}"><button class="btn btn-primary">Basic Information</button></a><li>
     <li class="nav-item">
-    <a class="nav-link" href="{% url 'parentofstudentdetails' pk=item.id  %}"><button class="btn btn-default">Parent Information</button></a><li>
+    <a class="nav-link" href="{% url 'G_parentofstudentdetails' pk=item.id  %}"><button class="btn btn-default">Parent Information</button></a><li>
     <li class="nav-item">
       <a class="nav-link" href="#"><button class="btn btn-primary">Attendance</button></a>
     </li>
