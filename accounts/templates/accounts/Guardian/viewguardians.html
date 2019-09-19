@@ -32,7 +32,7 @@
      {% if all_info %}
      {% for item in all_info %}
      <tr>
-       <td><img src='{{ item.Photo}}'></td>
+       <td>{% if item.Photo %}<img src="{{ item.Photo.url}}" width="50">{% endif %}</td>
        <td>{{ item.name}}</td>
        <td>{{ item.phone}}</td>
        <td>{{ item.profession}}</td>
