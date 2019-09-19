@@ -323,7 +323,7 @@ class StudentPresence(models.Model):
     attend = (('1','Present'), ('0','Absent'))
     Student_Name = models.ForeignKey(DataStudent,on_delete=models.PROTECT, blank=False)
     Attendance=models.CharField(max_length=8, choices=attend,null=True,default="none")
-    Attendance_Date = models.DateField(default=timezone.now())
+    Attendance_Date = models.DateField(default=timezone.now)
     def __str__(self):
         return self.Student_Name
 

@@ -106,7 +106,7 @@ def viewsubjects(request):
     return render(request, 'accounts/Subject/viewsubjects.html', context)
 
 
- #######################################
+  #######################################
 #   CRUD FOR THE Syllabus MODULE
 def addsyllabus(request):
     if request.method=="POST":
