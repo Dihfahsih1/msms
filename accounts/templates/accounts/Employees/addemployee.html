@@ -74,17 +74,16 @@
               <p>{{ form.Employee_Photo |as_crispy_field }}</p>
          </div>
         </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="text-default">Submit Data</h5>
+              <button type="submit" class="btn btn-success" name="button"> Add Employee </button>
+            </div>
+          </div>
+        </div>
      </div>
   </div>
-  <div class="col-md-4 col-sm-6 col-xs-6" style="float:right">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="text-default">Submit Data</h5>
-        <button type="submit" class="btn btn-success" name="button"> Add Employee </button>
-      </div>
-    </div>
-  </div>
   </form>
-
 </div>
 {% endblock %}
