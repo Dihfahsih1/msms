@@ -148,7 +148,7 @@ def addemployee(request):
         form=AddEmployeeForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('addemployee')
+            return redirect('addemployee')    
     else:
         form = AddEmployeeForm()
         context = {'form': form}
