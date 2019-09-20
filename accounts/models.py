@@ -145,7 +145,7 @@ class Employee(models.Model):
     Salary_Grade= models.ForeignKey(SalaryGrade, on_delete=models.PROTECT, blank=True, null=True)
     Salary_Type = models.CharField(max_length=130, choices=salaries_type, blank=False)
     Role = models.CharField(max_length=130, choices=roles, blank=False)
-    Joining_Date = models.DateField(max_length=100, default=timezone.now)
+    Joining_Date = models.CharField(max_length=100)
     Resume = models.ImageField(upload_to="gallery")
     Other_Info = models.TextField(max_length=100)
     Employee_Photo = models.ImageField(upload_to="gallery")

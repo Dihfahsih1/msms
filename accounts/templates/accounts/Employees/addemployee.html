@@ -29,10 +29,6 @@
    border-top: 1px solid rgba(0, 0, 0, 0.1);"/>
   {% load crispy_forms_tags %}
   <br><br>
-  {% load crispy_forms_tags %}
-  {% if error_message %}
-    <h1><strong>{{error_message}}</strong></h1>
-    {% endif %}
   <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="form-row" style="margin-left: 15px;font-size: 15px; padding: 0px 10px;">
@@ -58,8 +54,8 @@
           <h5 class="text-warning">Academic Information</h5>
             <p>{{ form.Email |as_crispy_field }}</p>
             <p>{{ form.Username |as_crispy_field }}</p>
-            <p>{{ form.Salary_Grade|as_crispy_field }}</p>
-            <p>{{ form.Salary_Type|as_crispy_field }}</p>
+            <p>{{ form.Salary_Grade |as_crispy_field }}</p>
+            <p>{{ form.Salary_Type |as_crispy_field }}</p>
             <p>{{ form.Role |as_crispy_field }}</p>
         </div>
        </div>
@@ -69,8 +65,8 @@
          <div class="card-body">
            <h5 class="text-warning">Other Information</h5>
              <p>{{ form.Resume |as_crispy_field }}</p>
-             <p>{{ form.Password|as_crispy_field }}</p>
-             <p>{{ form.Other_Info|as_crispy_field }}</p>
+             <p>{{ form.Password |as_crispy_field }}</p>
+             <p>{{ form.Other_Info |as_crispy_field }}</p>
               <p>{{ form.Employee_Photo |as_crispy_field }}</p>
          </div>
         </div>
