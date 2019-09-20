@@ -1527,5 +1527,3 @@ def viewfeecollection(request):
    all_info = FeeCollection.objects.all()
    context={'all_info':all_info}
    return render(request, 'accounts/Accounting/viewfeecollection.html', context)
-
-#
