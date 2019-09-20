@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import datetime
+from django.urls import reverse
 class School (models.Model):
     SchoolCode=models.CharField(max_length=130)
     SchoolName=models.CharField(max_length=130)
@@ -448,3 +449,5 @@ class Designation (models.Model):
     Notes = models.TextField(max_length=130)
     def __str__(self):
         return self.Name
+    def get_absolute_url(self):
+        return reverse('designation-delete', kwargs={'pk':self.pk})

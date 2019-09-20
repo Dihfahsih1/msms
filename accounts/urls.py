@@ -1,13 +1,17 @@
 from django.urls import path
 from django.conf.urls import url, include
 from . import views
+from .views import DesignationDeleteView
 from django_filters.views import FilterView
 urlpatterns=[
+
 url(r'^$', views.home, name="home"),
 url(r'^login', views.login, name="login"),
 url(r'^createclassinformation', views.createclassinformation, name="createclassinformation"),
 url(r'^editclassinformation/(?P<pk>\d+)', views.editclassinformation, name="editclassinformation"),
 url(r'^viewclassinformation', views.viewclassinformation, name="viewclassinformation"),
+
+
 
 url(r'^createsectioninformation', views.createsectioninformation, name="createsectioninformation"),
 url(r'^editsectioninformation/(?P<pk>\d+)', views.editsectioninformation, name="editsectioninformation"),
@@ -157,6 +161,7 @@ url(r'^adddesignation', views.adddesignation, name="adddesignation"),
 url(r'^editdesignation/(?P<pk>\d+)', views.editdesignation, name="editdesignation"),
 url(r'^deletedesignation/(?P<pk>\d+)', views.deletedesignation, name="deletedesignation"),
 url(r'^viewdesignations', views.viewdesignations, name="viewdesignations"),
+path('designation/<int:pk>/delete/', DesignationDeleteView.as_view(), name='designation-delete'),
 
 url(r'^addstudent', views.addstudent, name="addstudent"),
 url(r'^editstudent/(?P<pk>\d+)', views.editstudent, name="editstudent"),

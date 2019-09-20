@@ -1,5 +1,5 @@
 from django.shortcuts import *
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import *
 from .forms import *
 from django.urls import reverse_lazy
@@ -1561,3 +1561,10 @@ def viewdesignations(request):
    all_info = Designation.objects.all()
    context={'all_info':all_info}
    return render(request, 'accounts/Employees/viewdesignations.html', context)
+#confirm deletedesignation
+class DesignationDeleteView(DeleteView):
+    model = Designation
+    #messages.success('Post Deleted Successfully!')
+    success_url = '/'
+    def test_func(self):
+        designation = self.get_object()

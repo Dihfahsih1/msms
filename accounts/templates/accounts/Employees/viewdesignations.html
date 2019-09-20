@@ -41,9 +41,9 @@
      <tr>
        <td>{{ item.Name}}</td>
        <td>{{ item.Notes}}</td>
-       <td><a href="{% url 'editdesignation' pk=item.id  %}" >
+       <td><a href="{% url 'editdesignation' item.id  %}" >
          <button class="btn btn-warning">Edit</button></a>|
-         <a href="{% url 'deletedesignation' pk=item.id %}" >
+         <a href="{% url 'designation-delete' item.id %}" >
            <button class="btn btn-danger">Delete</button></a>
        </td>
         {% endfor %}
