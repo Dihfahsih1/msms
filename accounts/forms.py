@@ -315,3 +315,8 @@ class AddFeeCollectionForm(forms.ModelForm):
     class Meta:
         model = FeeCollection
         fields = ('School','Class','Section','Student_Name','FeeType','FeeAmount','Month','IsApplicableDiscount','PaidStatus','Notes')
+        
+class AddDesignationForm(forms.ModelForm):
+    class Meta:
+        model = Designation
+        fields=('Name', 'Notes')
