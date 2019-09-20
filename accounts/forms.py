@@ -58,7 +58,7 @@ class EditSyllabusForm(forms.ModelForm):
 class AddEmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
-        fields = ('Name','National_ID','Designation','Phone','Gender','Blood_Group','Religion','Birth_Date','Present_Address','Permanent_Address','Email','Username','Password','Salary_Grade','Salary_Type','Role','Joining_Date','Resume','Other_Info','Employee_Photo')
+        fields = ('Name','National_ID','Designation','Phone','Gender','Blood_Group','Religion','Birth_Date','Present_Address','Permanent_Address','Email','Username','Password','Salary_Grade','Salary_Type','Role','Joining_Date','Resume','Other_Info','Employee_Photo','Religion')
 class AddRoutineForm(forms.ModelForm):
     class Meta:
         model = Routine

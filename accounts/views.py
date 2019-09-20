@@ -162,7 +162,7 @@ def editemployee(request, pk):
             return redirect('viewemployees')
     else:
         form =  AddEmployeeForm(instance=item)
-        return render(request, 'accounts/Employees/editemployees.html', {'form': form})
+        return render(request, 'accounts/Employees/editemployee.html', {'form': form})
 
 def deleteemployee(request, pk):
     Employee.objects.filter(id=pk).delete()
