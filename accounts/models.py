@@ -442,3 +442,8 @@ class Profile (models.Model):
     OtherInfo = models.TextField(max_length=120)
     def __str__(self):
         return self.Name
+class Designation (models.Models):
+    Name = models.CharField(max_length=130)
+    Notes = models.TextField(max_length=130)
+    def __str__(self):
+        return self.Name
