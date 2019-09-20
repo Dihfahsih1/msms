@@ -148,7 +148,7 @@ def addemployee(request):
         form=AddEmployeeForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('addemployee')    
+            return redirect('addemployee')
     else:
         form = AddEmployeeForm()
         context = {'form': form}
@@ -1122,7 +1122,6 @@ def deletestudent(request, pk):
     context={'all_info' :all_info}
     return render(request, 'accounts/Students/viewstudents.html', context)
 def viewstudents(request):
-
     all_info = DataStudent.objects.all()
     context={'all_info' :all_info}
     return render(request, 'accounts/Students/viewstudents.html', context)
@@ -1527,3 +1526,38 @@ def viewfeecollection(request):
    all_info = FeeCollection.objects.all()
    context={'all_info':all_info}
    return render(request, 'accounts/Accounting/viewfeecollection.html', context)
+
+################################################
+#   CRUD FOR DESIGNATION MODULE
+def adddesignation(request):
+   if request.method=="POST":
+       form=AddDesignationForm(request.POST,request.FILES)
+       if form.is_valid():
+           form.save()
+           return redirect('adddesignation')
+   else:
+       form = AddDesignationForm()
+       context = {'form': form}
+       return render(request, 'accounts/Employees/adddesignation.html', context)
+
+def editdesignation(request, pk):
+   item = get_object_or_404(Designation, id=pk)
+   if request.method == "POST":
+       form =  AddDesignationForm(request.POST,request.FILES, instance=item)
+       if form.is_valid():
+           form.save()
+           return redirect('viewdesignations')
+   else:
+       form =  AddDesignationForm(instance=item)
+       return render(request, 'accounts/Employees/editdesignation.html', {'form': form})
+
+def deletedesignation(request, pk):
+   Designation.objects.filter(id=pk).delete()
+   all_info=Designation.objects.all()
+   context={'all_info' :all_info}
+   return render(request, 'accounts/Employees/viewdesignations.html', context)
+#
+def viewdesignations(request):
+   all_info = Designation.objects.all()
+   context={'all_info':all_info}
+   return render(request, 'accounts/Employees/viewdesignations.html', context)
