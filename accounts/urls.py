@@ -153,6 +153,11 @@ url(r'^editschool/(?P<pk>\d+)', views.editschool, name="editschool"),
 url(r'^deleteschool/(?P<pk>\d+)', views.deleteschool, name="deleteschool"),
 url(r'^viewschools', views.viewschools, name="viewschools"),
 
+url(r'^adddesignation', views.adddesignation, name="adddesignation"),
+url(r'^editdesignation/(?P<pk>\d+)', views.editdesignation, name="editdesignation"),
+url(r'^deletedesignation/(?P<pk>\d+)', views.deletedesignation, name="deletedesignation"),
+url(r'^viewdesignations', views.viewdesignations, name="viewdesignations"),
+
 url(r'^addstudent', views.addstudent, name="addstudent"),
 url(r'^editstudent/(?P<pk>\d+)', views.editstudent, name="editstudent"),
 url(r'^deletestudent/(?P<pk>\d+)', views.deletestudent, name="deletestudent"),
