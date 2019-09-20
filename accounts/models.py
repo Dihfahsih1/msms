@@ -9,6 +9,7 @@ class School (models.Model):
     DateOfRegistration=models.CharField(max_length=130)
     def __str__(self):
         return self.SchoolName
+        #
 class Guardian(models.Model):
     name = models.CharField(max_length=100, default="guardian name")
     phone = models.CharField(max_length=150, default="phone number")
@@ -121,15 +122,34 @@ class Syllabus(models.Model):
     def __str__(self):
         return self.Syllabus
 
-class HumanResource(models.Model):
-    choices = (('female','female'), ('male', 'male'))
-    Name = models.CharField(max_length=130)
-    NationaId = models.CharField(max_length=130)
+class Employee(models.Model):
+    sex = (('female','female'), ('male','male'))
+    reli = (('moslem','moslem'), ('Christian','Christian'),('Others','Others'))
+    blood= (('A+','A+'), ('A-', 'A-'),('B+','B+'), ('B-', 'B-'),('AB+','AB+'), ('AB-', 'AB-'),
+    ('O+','O+'), ('O-', 'O-'))
+    roles= (('Admin','Admin'), ('Librarian', 'Librarian'),('Receiptionist','Receiptionist'), ('Accountant', 'Accountant'),('Staff','Staff'))
+    salaries_type = (('Monthly','Monthly'), ('hourly', 'hourly'))
+    Name = models.CharField(max_length=100)
+    National_ID = models.CharField(max_length=100)
     Designation = models.CharField(max_length=130)
-    Phone = models.CharField(max_length=130)
-    Gender = models.CharField(max_length=10, choices=choices, blank=False, null=True)
-    Address = models.CharField(max_length=130)
-    Religion = models.CharField(max_length=130)
+    Phone = models.CharField(max_length=150)
+    Gender = models.CharField(max_length=130, choices=sex, blank=False)
+    Blood_Group = models.CharField(max_length=130, choices=blood, blank=False)
+    Religion = models.CharField(max_length=130, choices=reli, blank=False)
+    Birth_Date= models.CharField(max_length=100)
+    Present_Address = models.CharField(max_length=100)
+    Permanent_Address = models.CharField(max_length=100)
+    Email = models.CharField(max_length=100)
+    Username = models.CharField(max_length=100)
+    Password = models.CharField(max_length=100, default="Enter Pass")
+    Salary_Grade= models.ForeignKey(SalaryGrade, on_delete=models.PROTECT, blank=True, null=True)
+    Salary_Type = models.CharField(max_length=130, choices=salaries_type, blank=False)
+    Role = models.CharField(max_length=130, choices=roles, blank=False)
+    Joining_Date = models.DateField(max_length=100, default=timezone.now)
+    Resume = models.ImageField(upload_to="gallery")
+    Other_Info = models.TextField(max_length=100)
+    Employee_Photo = models.ImageField(upload_to="gallery")
+
     def __str__(self):
         return self.Name
 

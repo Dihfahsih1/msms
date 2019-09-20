@@ -47,13 +47,18 @@
 <div class="sidenav scrollbar scrollbar-primary">
   <br><br><br><br>
   <h3 style=" color: white">MANAGE</h3>
-
+  <button class="dropdown-btn">Human Resource
+  <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Manage Designation</a>
+    <a href="{% url 'viewemployees' %}">Manage Employee</a>
+  </div>
     <a href="{% url 'viewclassinformation'  %}">Classes</a>
     <a href="{% url 'viewsectioninformation'  %}">Streams</a>
     <a href="{% url 'viewteachers'  %}">Teachers</a>
     <a href="{% url 'viewsubjects'  %}">Subjects</a>
     <a href="{% url 'viewsyllabus'  %}">Syllabus</a>
-   <a href="{% url 'viewhumanresource'  %}">Human Resource</a>
    <a href="{% url 'viewguardians'  %}">Guardian</a>
 
 <button class="dropdown-btn">Attendance

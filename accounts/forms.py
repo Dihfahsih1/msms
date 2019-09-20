@@ -6,7 +6,7 @@ class LoginForm(forms.ModelForm):
     class Meta:
         model = Login
         fields = ('username', 'password')
-
+#
 class ClassinformationForm(forms.ModelForm):
     class Meta:
         model = Classinformation
@@ -55,15 +55,10 @@ class EditSyllabusForm(forms.ModelForm):
         model = Syllabus
         fields = ('SyllabusType', 'Subject', 'Class', 'Syllabus','Notes')
 
-class AddHumanResourceForm(forms.ModelForm):
+class AddEmployeeForm(forms.ModelForm):
     class Meta:
-        model = HumanResource
-        fields = ('Name', 'NationaId', 'Designation', 'Phone','Address', 'Gender', 'Religion')
-class EditHumanResourceForm(forms.ModelForm):
-    class Meta:
-        model = HumanResource
-        fields = ('Name', 'Designation', 'Phone','Address')
-
+        model = Employee
+        fields = ('Name','National_ID','Designation','Phone','Gender','Blood_Group','Religion','Birth_Date','Present_Address','Permanent_Address','Email','Username','Password','Salary_Grade','Salary_Type','Role','Joining_Date','Resume','Other_Info','Employee_Photo')
 class AddRoutineForm(forms.ModelForm):
     class Meta:
         model = Routine
@@ -302,7 +297,7 @@ class AddStudentForm(forms.ModelForm):
         'email','password','health_condition','Transfer_Certificate',
         'Father_Photo','Student_Photo','Mother_Photo','Birth_Date')
         labels = {'school':'Name of the School', 'name':'Name of the student','gender':'Gender of Student', 'religion':'Religion of      Student','Class':'Current Class of Student','stream':'Student Stream','admission_no':'Student Admission Number',
-                  'admission_date':'Admission Date','Guardian':'Student Guardian','GuardianRelationshipToStudent':'Guardian Relationship To Student' }   
+                  'admission_date':'Admission Date','Guardian':'Student Guardian','GuardianRelationshipToStudent':'Guardian Relationship To Student' }
 
 class AddStudentAttendanceForm(forms.ModelForm):
     class Meta:

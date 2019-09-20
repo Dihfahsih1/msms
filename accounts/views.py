@@ -141,39 +141,39 @@ def viewsyllabus(request):
     return render(request, 'accounts/Syllabus/viewsyllabus.html', context)
 
  ###############################################
-#   CRUD FOR THE HUMAN RESOURCES MANAGER MODULE
+#   CRUD FOR THE Employee MODULE
 #this includes updating, creating, deleting and viewing.
-def addhumanresource(request):
+def addemployee(request):
     if request.method=="POST":
-        form=AddHumanResourceForm(request.POST,request.FILES)
+        form=AddEmployeeForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('addhumanresource')
+            return redirect('addemployee')
     else:
-        form = AddHumanResourceForm()
+        form = AddEmployeeForm()
         context = {'form': form}
-        return render(request, 'accounts/HumanResource/addhumanresource.html', context)
-def edithumanresource(request, pk):
-    item = get_object_or_404(HumanResource, id=pk)
+        return render(request, 'accounts/Employees/addemployee.html', context)
+def editemployee(request, pk):
+    item = get_object_or_404(Employee, id=pk)
     if request.method == "POST":
-        form =  EditHumanResourceForm(request.POST,request.FILES, instance=item)
+        form =  AddEmployeeForm(request.POST,request.FILES, instance=item)
         if form.is_valid():
             form.save()
-            return redirect('viewhumanresource')
+            return redirect('viewemployees')
     else:
-        form =  EditHumanResourceForm(instance=item)
-        return render(request, 'accounts/HumanResource/edithumanresource.html', {'form': form})
+        form =  AddEmployeeForm(instance=item)
+        return render(request, 'accounts/Employees/editemployees.html', {'form': form})
 
-def deletehumanresource(request, pk):
-    HumanResource.objects.filter(id=pk).delete()
-    all_info=HumanResource.objects.all()
+def deleteemployee(request, pk):
+    Employee.objects.filter(id=pk).delete()
+    all_info=Employee.objects.all()
     context={'all_info' :all_info}
-    return render(request, 'accounts/HumanResource/viewhumanresource.html', context)
+    return render(request, 'accounts/Employees/viewemployees.html', context)
 
-def viewhumanresource(request):
-    all_info = HumanResource.objects.all()
+def viewemployees(request):
+    all_info = Employee.objects.all()
     context={'all_info':all_info}
-    return render(request, 'accounts/HumanResource/viewhumanresource.html', context)
+    return render(request, 'accounts/Employees/viewemployees.html', context)
 
  ###############################################
 ############  CRUD FOR THE ROUTINE ##
@@ -1522,7 +1522,7 @@ def deletefeecollection(request, pk):
    all_info=FeeCollection.objects.all()
    context={'all_info' :all_info}
    return render(request, 'accounts/Accounting/viewfeecollection.html', context)
-
+#
 def viewfeecollection(request):
    all_info = FeeCollection.objects.all()
    context={'all_info':all_info}
