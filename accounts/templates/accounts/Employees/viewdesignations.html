@@ -6,7 +6,7 @@
     <i style="font-size: 15px; color:red;">Quick Links</i>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-      <a class="nav-link" href="{% url 'viewdesignations' %}">Manage Designation</a>
+      <a class="nav-link" href="#">Manage Designation</a>
       </li>
       <li class="nav-item">
       <a class="nav-link" href="{% url 'viewemployees' %}">Manage Employee</a>
@@ -17,7 +17,7 @@
   <nav class="nav navbar-expand">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-      <a class="nav-link" href="{% url 'viewdesignations' %}"><button class="btn btn-default">Designation List</button></a>
+      <a class="nav-link" href="#"><button class="btn btn-default">Designation List</button></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'adddesignation' %}"><button class="btn btn-primary">Add Desgnation</button>
@@ -41,9 +41,9 @@
      <tr>
        <td>{{ item.Name}}</td>
        <td>{{ item.Notes}}</td>
-       <td><a href="{% url 'editdesignation' item.id  %}" >
+       <td><a href="{% url 'editdesignation' pk=item.id  %}" >
          <button class="btn btn-warning">Edit</button></a>|
-         <a href="{% url 'designation-delete' item.id %}" >
+         <a href="{% url 'deletedesignation' item.id %}" >
            <button class="btn btn-danger">Delete</button></a>
        </td>
         {% endfor %}

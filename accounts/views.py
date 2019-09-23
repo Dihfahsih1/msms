@@ -1564,7 +1564,6 @@ def viewdesignations(request):
 #confirm deletedesignation
 class DesignationDeleteView(DeleteView):
     model = Designation
-    #messages.success('Post Deleted Successfully!')
     success_url = '/'
     def test_func(self):
         designation = self.get_object()
