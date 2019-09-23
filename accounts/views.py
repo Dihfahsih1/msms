@@ -1564,6 +1564,6 @@ def viewdesignations(request):
 #confirm deletedesignation
 class DesignationDeleteView(DeleteView):
     model = Designation
-    success_url = '/'
+    success_url = '/accounts/viewdesignations'
     def test_func(self):
         designation = self.get_object()
