@@ -1562,10 +1562,10 @@ def viewdesignations(request):
    all_info = Designation.objects.all()
    context={'all_info':all_info}
    return render(request, 'accounts/Employees/viewdesignations.html', context)
-#confirm deletedesignation
+#confirm deletedesignation this a generic view in which a deleteView is used to perform deletion and redirecting.
 class DesignationDeleteView(SuccessMessageMixin, DeleteView):
     model = Designation
-    success_message='Post Deleted Successfully!'
     success_url = '/accounts/viewdesignations'
+    success_message='Post Deleted Successfully!'
     def test_func(self):
         designation = self.get_object()
