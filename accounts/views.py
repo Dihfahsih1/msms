@@ -2,6 +2,7 @@ from django.shortcuts import *
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import *
 from .forms import *
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 
@@ -1566,6 +1567,9 @@ def viewdesignations(request):
 class DesignationDeleteView(SuccessMessageMixin, DeleteView):
     model = Designation
     success_url = '/accounts/viewdesignations'
-    success_message='Post Deleted Successfully!'
+    success_message='Designation was Deleted Successfully!'
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DesignationDeleteView, self).delete(request, *args, **kwargs)
     def test_func(self):
         designation = self.get_object()
