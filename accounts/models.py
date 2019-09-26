@@ -460,3 +460,10 @@ class City(models.Model):
     country = models.ForeignKey(Country, on_delete=models.PROTECT, blank=True, null=True)
     def __str__(self):
         return self.name
+
+class road(models.Model):
+    name = models.CharField(max_length=50)
+    city = models.ForeignKey(City, on_delete=models.PROTECT, blank=True, null=True)
+    country = models.ForeignKey(Country, on_delete=models.PROTECT, blank=True, null=True)
+    def __str__(self):
+        return self.name

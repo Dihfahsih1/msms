@@ -6,6 +6,9 @@ from django_filters.views import FilterView
 urlpatterns=[
 
 url(r'^$', views.home, name="home"),
+url(r'^ctry', views.ctry, name="ctry"),
+url(r'^getdetails', views.getdetails, name="getdetails"),
+
 url(r'^login', views.login, name="login"),
 url(r'^createclassinformation', views.createclassinformation, name="createclassinformation"),
 url(r'^editclassinformation/(?P<pk>\d+)', views.editclassinformation, name="editclassinformation"),

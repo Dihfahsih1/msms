@@ -5,6 +5,8 @@ from .forms import *
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+import json
+from django.http import HttpResponse
 
 def home(request):
     return render(request, 'accounts/home.html')
@@ -695,6 +697,40 @@ def viewfeetype(request):
    context={'all_info':all_info}
    return render(request, 'accounts/Accounting/viewfeetype.html', context)
 
+################################################
+    #   MANAGE INVOICES
+def addfeetype(request):
+   if request.method=="POST":
+       form=AddFeeTypeForm(request.POST,request.FILES)
+       if form.is_valid():
+           form.save()
+           return redirect('addfeetype')
+   else:
+       form = AddFeeTypeForm()
+       context = {'form': form}
+       return render(request, 'accounts/Accounting/addfeetype.html', context)
+
+def editfeetype(request, pk):
+   item = get_object_or_404(FeeType, id=pk)
+   if request.method == "POST":
+       form =  EditFeeTypeForm(request.POST,request.FILES, instance=item)
+       if form.is_valid():
+           form.save()
+           return redirect('viewfeetype')
+   else:
+       form =  EditFeeTypeForm(instance=item)
+       return render(request, 'accounts/Accounting/editfeetype.html', {'form': form})
+
+def deletefeetype(request, pk):
+   FeeType.objects.filter(id=pk).delete()
+   all_info=FeeType.objects.all()
+   context={'all_info' :all_info}
+   return render(request, 'accounts/Accounting/viewfeetype.html', context)
+
+def viewfeetype(request):
+   all_info = FeeType.objects.all()
+   context={'all_info':all_info}
+   return render(request, 'accounts/Accounting/viewfeetype.html', context)
 
 
 
@@ -1575,3 +1611,24 @@ class DesignationDeleteView(SuccessMessageMixin, DeleteView):
         return super(DesignationDeleteView, self).delete(request, *args, **kwargs)
     def test_func(self):
         designation = self.get_object()
+
+#testing chained select2
+def ctry(request):
+    countries = Country.objects.all()
+    print (countries)
+    return render(request, 'country.html', {'countries': countries})
+
+def getdetails(request):
+    #country_name = request.POST['country_name']
+    country_name = request.GET['cnt']
+    print ("ajax country_name ", country_name)
+    result_set = []
+    all_cities = []
+    answer = str(country_name[1:-1])
+    selected_country = Country.objects.get(Name=answer)
+    print( "selected country name ", selected_country)
+    all_cities = selected_country.city_set.all()
+    for city in all_cities:
+        print ("city name", city.name)
+        result_set.append({'name': city.name})
+    return HttpResponse(simplejson.dumps(result_set), mimetype='application/json',    content_type='application/json')

@@ -5,3 +5,5 @@ from .models import *
 admin.site.register(DataStudent)
 admin.site.register(Employee)
 admin.site.register(Designation)
+admin.site.register(Country)
+admin.site.register(City)
