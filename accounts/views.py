@@ -1648,13 +1648,11 @@ def getRoads(request):
         print('answer = ', answer)
         selected_city = City.objects.get(name=answer)
         print("selected city name ", selected_city)
-
         all_roads = selected_city.roads.all()
         print("roads are: ", all_roads)
         for road in all_roads:
             print("road name", road.name)
             result_set.append({'name': road.name})
-
         return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
         # return JsonResponse(result_set,status = 200)
 
