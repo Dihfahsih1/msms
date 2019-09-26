@@ -10,6 +10,13 @@ class School (models.Model):
     DateOfRegistration=models.CharField(max_length=130)
     def __str__(self):
         return self.SchoolName
+class Designation (models.Model):
+    Name = models.CharField(max_length=130)
+    Notes = models.TextField(max_length=130)
+    def __str__(self):
+        return self.Name
+    def get_absolute_url(self):
+        return reverse('designation-delete', kwargs={'pk':self.pk})
         #
 class Guardian(models.Model):
     name = models.CharField(max_length=100, default="guardian name")
@@ -443,11 +450,3 @@ class Profile (models.Model):
     OtherInfo = models.TextField(max_length=120)
     def __str__(self):
         return self.Name
-
-class Designation (models.Model):
-    Name = models.CharField(max_length=130)
-    Notes = models.TextField(max_length=130)
-    def __str__(self):
-        return self.Name
-    def get_absolute_url(self):
-        return reverse('designation-delete', kwargs={'pk':self.pk})
