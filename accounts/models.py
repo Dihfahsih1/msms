@@ -450,3 +450,19 @@ class Profile (models.Model):
     OtherInfo = models.TextField(max_length=120)
     def __str__(self):
         return self.Name
+class Country(models.Model):
+    name = models.CharField(max_length=50)
+    def __str__(self):
+        return str(self.name)
+
+class City(models.Model):
+    name = models.CharField(max_length=50)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='cities')
+    def __str__(self):
+        return str(self.name)
+
+class Road(models.Model):
+    name = models.CharField(max_length=50)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='roads')
+    def __str__(self):
+        return str(self.name)
