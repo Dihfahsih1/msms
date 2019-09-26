@@ -132,7 +132,7 @@ class Employee(models.Model):
     salaries_type = (('Monthly','Monthly'), ('hourly', 'hourly'))
     Name = models.CharField(max_length=100)
     National_ID = models.CharField(max_length=100)
-    Designation = models.CharField(max_length=130)
+    Designation = models.ForeignKey(Designation, on_delete=models.PROTECT, blank=True, null=True)
     Phone = models.CharField(max_length=150)
     Gender = models.CharField(max_length=130, choices=sex, blank=False)
     Blood_Group = models.CharField(max_length=130, choices=blood, blank=False)
