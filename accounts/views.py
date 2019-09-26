@@ -1654,7 +1654,5 @@ def getRoads(request):
             print("road name", road.name)
             result_set.append({'name': road.name})
         return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
-        # return JsonResponse(result_set,status = 200)
-
     else:
         return redirect('/')
