@@ -7,7 +7,8 @@ urlpatterns=[
 
 url(r'^$', views.home, name="home"),
 url(r'^ctry', views.ctry, name="ctry"),
-url(r'^getdetails', views.getdetails, name="getdetails"),
+url(r'^getCity', views.getCity, name="getCity"),
+url(r'^getRoads', views.getRoads, name="getRoads"),
 
 url(r'^login', views.login, name="login"),
 url(r'^createclassinformation', views.createclassinformation, name="createclassinformation"),

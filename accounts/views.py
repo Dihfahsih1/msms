@@ -1618,17 +1618,46 @@ def ctry(request):
     print (countries)
     return render(request, 'country.html', {'countries': countries})
 
-def getdetails(request):
-    #country_name = request.POST['country_name']
-    country_name = request.GET['cnt']
-    print ("ajax country_name ", country_name)
-    result_set = []
-    all_cities = []
-    answer = str(country_name[1:-1])
-    selected_country = Country.objects.get(Name=answer)
-    print( "selected country name ", selected_country)
-    all_cities = selected_country.city_set.all()
-    for city in all_cities:
-        print ("city name", city.name)
-        result_set.append({'name': city.name})
-    return HttpResponse(simplejson.dumps(result_set), mimetype='application/json',    content_type='application/json')
+def getCity(request):
+    if request.method == 'GET' and request.is_ajax():
+        country_name = request.GET.get('cnt', None)
+        print("ajax country_name ", country_name)
+        result_set = []
+        all_cities = []
+        answer = str(country_name[1:-1])
+        print('answer = ', answer)
+        selected_country = Country.objects.get(name=answer)
+        print("selected country name ", selected_country)
+        all_cities = selected_country.cities.all()
+        print("cities are: ", all_cities)
+        for city in all_cities:
+            print("city name", city.name)
+            result_set.append({'name': city.name})
+        return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
+        # return JsonResponse(result_set,status = 200)
+
+    else:
+        return redirect('/')
+
+def getRoads(request):
+    if request.method == 'GET' and request.is_ajax():
+        city_name = request.GET.get('ct', None)
+        print("ajax city_name ", city_name)
+        result_set = []
+        all_roads = []
+        answer = str(city_name)
+        print('answer = ', answer)
+        selected_city = City.objects.get(name=answer)
+        print("selected city name ", selected_city)
+
+        all_roads = selected_city.roads.all()
+        print("roads are: ", all_roads)
+        for road in all_roads:
+            print("road name", road.name)
+            result_set.append({'name': road.name})
+
+        return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
+        # return JsonResponse(result_set,status = 200)
+
+    else:
+        return redirect('/')
