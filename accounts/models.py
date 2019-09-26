@@ -450,20 +450,3 @@ class Profile (models.Model):
     OtherInfo = models.TextField(max_length=120)
     def __str__(self):
         return self.Name
-
-class Country(models.Model):
-        name = models.CharField(max_length=150)
-        def __str__(self):
-            return self.name
-class City(models.Model):
-    name = models.CharField(max_length=150)
-    country = models.ForeignKey(Country, on_delete=models.PROTECT, blank=True, null=True)
-    def __str__(self):
-        return self.name
-
-class Road(models.Model):
-    name = models.CharField(max_length=150)
-    city = models.ForeignKey(City, on_delete=models.PROTECT, blank=True, null=True)
-    country = models.ForeignKey(Country, on_delete=models.PROTECT, blank=True, null=True)
-    def __str__(self):
-        return self.name

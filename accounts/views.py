@@ -5,7 +5,7 @@ from .forms import *
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-import json
+import json as simplejson
 from django.http import HttpResponse
 
 def home(request):
@@ -1625,7 +1625,6 @@ def getCity(request):
         result_set = []
         all_cities = []
         answer = str(country_name[1:-1])
-        print('answer = ', answer)
         selected_country = Country.objects.get(name=answer)
         print("selected country name ", selected_country)
         all_cities = selected_country.cities.all()
@@ -1634,7 +1633,7 @@ def getCity(request):
             print("city name", city.name)
             result_set.append({'name': city.name})
         return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
-        # return JsonResponse(result_set,status = 200)
+        #return JsonResponse(result_set,status = 200)
 
     else:
         return redirect('/')
