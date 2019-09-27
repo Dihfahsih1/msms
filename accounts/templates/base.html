@@ -19,7 +19,7 @@
                       console.log(result);
                       $("#selectsections option").remove();
                       for (var i = result.length - 1; i >= 0; i--) {
-                          $("#selectsections").append('<option>'+ result[i].SectionName +'</option>');};},});});
+                          $("#selectsections").append('<option>'+ result[i].name +'</option>');};},});});
            $('select#selectsections').change(function () {
                var optionSelected = $(this).find("option:selected");
                var valueSelected  = optionSelected.val();
