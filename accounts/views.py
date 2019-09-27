@@ -1549,9 +1549,9 @@ def getSections(request):
         class_name = request.GET.get('cnt', None)
         print("ajax class_name ", class_name)
         result_set = []
-        all_cities = []
+        all_sections = []
         answer = str(class_name[1:-1])
-        selected_class = Classinformation.objects.get(name=answer)
+        selected_class = Classinformation.objects.get(ClassName=answer)
         print("selected class name ", selected_class)
         all_sections = selected_class.sections.all()
         print("sections are: ", all_sections)
@@ -1570,7 +1570,7 @@ def getStudents(request):
         all_students = []
         answer = str(section_name)
         print('answer = ', answer)
-        selected_section = Sectioninformation.objects.get(name=answer)
+        selected_section = Sectioninformation.objects.get(SectionName=answer)
         print("selected Section name ", selected_section)
         all_students = selected_section.students.all()
         print("students are: ", all_students)
