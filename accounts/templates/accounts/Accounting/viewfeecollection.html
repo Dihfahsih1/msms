@@ -45,9 +45,8 @@
 <table class="table table-hover" border="2">
    <thead class="table-success">
     <tr>
-         <td>id</td>
-         <td>School</td>
          <td>Class</td>
+         <td>Section</td>
          <td>Student</td>
          <td>Fee Type</td>
          <td>Fee Amount</td>
@@ -62,9 +61,8 @@
      {% if all_info %}
      {% for item in all_info %}
      <tr>
-       <td>{{ item.id}}</td>
-       <td>{{ item.School}}</td>
        <td>{{ item.Class}}</td>
+       <td>{{ item.Section}}</td>
        <td>{{ item.Student_Name}}</td>
        <td>{{ item.FeeType}}</td>
        <td>{{ item.FeeAmount}}</td>

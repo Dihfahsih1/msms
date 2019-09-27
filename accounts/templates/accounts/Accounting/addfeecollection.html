@@ -53,25 +53,26 @@
     <form enctype="multipart/form-data" novalidate method="POST">
       {% csrf_token %}
         <div class="row">
-          <select name="selectclasses" id="selectclasses" >
+          <select name="selectclasses" id="selectclasses" valueSelected='{{ form.Class|as_crispy_field }}' >
               {% for item in all_classes %}
               <option val="{{ item.ClassName }}"> {{ item.ClassName }} </option>
               {% endfor %}
           </select>
-          <select name ="selectsections" id="selectsections"  >
+          <select name ="selectsections" id="selectsections" valueSelected='{{ form.Section|as_crispy_field }}'  >
 
           </select>
-          <select name ="selectstudents" id="selectstudents" ></select>
+          <select name ="selectstudents" id="selectstudents" valueSelected='{{ form.Student_Name|as_crispy_field }}' ></select>
            <br><br>
-           <div class="item form-group">
+           <div class="item form-group" type="hidden">
                <p>{{ form.Class|as_crispy_field }}</p>
            </div>
-           <div class="item form-group">
+           <div class="item form-group" type="hidden">
                <p>{{ form.Section|as_crispy_field }}</p>
            </div>
-           <div class="item form-group">
+           <div class="item form-group" type="hidden">
                <p>{{ form.Student_Name|as_crispy_field }}</p>
            </div>
+
             <div class="item form-group">
                 <p>{{ form.FeeType|as_crispy_field }}</p>
             </div>
