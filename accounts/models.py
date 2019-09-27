@@ -93,7 +93,7 @@ class Classinformation(models.Model):
     nameclass= (('Form_One','Form_One'), ('Form_Two', 'Form_Two'),('Form_Three','Form_Three'), ('Form_Four', 'Form_Four'),
     ('Form_Five_Arts','Form_Five_Arts'), ('Form_Five_Sciences', 'Form_Five_Sciences'),
     ('Form_Five_Six','Form_Six_Arts'), ('Form_Six_Sciences', 'Form_Six_Sciences'))
-    ClassName = models.CharField(max_length=130, choices=nameclass, blank=False)
+    ClassName = models.CharField(max_length=130, choices=nameclass, blank=False, default="class Name")
     ClassTeacher = models.ForeignKey(TeachersInformation, on_delete=models.PROTECT, blank=True, null=True)
     TotalStudents = models.CharField(max_length=30, blank=True)
     NumberOfSections = models.CharField(max_length=30, blank=True)
@@ -104,7 +104,7 @@ class Sectioninformation(models.Model):
     options = (('A','A'),('B','B'))
     NameOfClass = models.ForeignKey(Classinformation, on_delete=models.PROTECT, related_name='sections')
     StreamTeacher = models.ForeignKey(TeachersInformation, on_delete=models.PROTECT, blank=True, null=True)
-    SectionName = models.CharField(max_length=130, choices=options, blank=False)
+    SectionName = models.CharField(max_length=130, choices=options, blank=False, default="section")
     NumberOfStudents = models.CharField(max_length=30, blank=True)
 
     def __str__(self):
