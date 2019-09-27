@@ -47,6 +47,13 @@
 {% load crispy_forms_tags %}
 <div class="col-lg-4" style="float:left">
 <form method="post" enctype="multipart/form-data" novalidate>
+  <select name="selectclasses" id="selectclasses">
+      {% for item in all_classes %}
+      <option val="{{ item.ClassName }}"> {{ item.ClassName }} </option>
+      {% endfor %}
+  </select>
+  <select name ="selectsections" id="selectsections">-------------</select>
+  <select name ="selectstudents" id="selectstudents">---------------</select>
 <p>Enter Details</p>
   {% csrf_token %}
   <div class="x_content">

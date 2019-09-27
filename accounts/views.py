@@ -1562,7 +1562,6 @@ def getSections(request):
             result_set.append({'name': section.SectionName})
         return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
         #return JsonResponse(result_set,status = 200)
-
     else:
         return redirect('/')
 def getStudents(request):
