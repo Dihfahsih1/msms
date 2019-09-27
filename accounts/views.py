@@ -1533,6 +1533,7 @@ def load_students(request):
 ################################################
 #   CRUD FOR THE FEE COLLECTION MODULE
 def addfeecollection(request):
+   all_classes=Classinformation.objects.all()
    if request.method=="POST":
        form=AddFeeCollectionForm(request.POST,request.FILES)
        if form.is_valid():
@@ -1542,6 +1543,9 @@ def addfeecollection(request):
        form = AddFeeCollectionForm()
        context = {'form': form}
        return render(request, 'accounts/Accounting/addfeecollection.html', context)
+    class_context={'all_classes':all_classes}
+     return render(request, 'accounts/Accounting/addfeecollection.html', class_context)
+     
 
 def editfeecollection(request, pk):
    item = get_object_or_404(FeeType, id=pk)
