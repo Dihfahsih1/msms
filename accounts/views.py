@@ -1538,7 +1538,7 @@ def addfeecollection(request):
        if form.is_valid():
            form.save()
            return redirect('addfeecollection')
-       return HttpResponse("Form is not valid")
+       #return HttpResponse("Form is not valid")
    else:
        all_classes=Classinformation.objects.all()
        form = AddFeeCollectionForm()
