@@ -47,9 +47,11 @@
 {% load crispy_forms_tags %}
 <div class="col-lg-4" style="float:left">
 <p>Enter Details</p>
-  {% csrf_token %}
+
   <div class="x_content">
-    <form enctype="multipart/form-data" novalidate>
+    {% load crispy_forms_tags %}
+    <form enctype="multipart/form-data" novalidate method="POST">
+      {% csrf_token %}
         <div class="row">
           <select name="selectclasses" id="selectclasses">
               {% for item in all_classes %}
@@ -58,39 +60,37 @@
           </select>
           <select name ="selectsections" id="selectsections">-------------</select>
           <select name ="selectstudents" id="selectstudents">---------------</select>
-<br><br>
+           <br><br>
+           <div class="item form-group">
+               <p>{{ form.Class|as_crispy_field }}</p>
+           </div>
+           <div class="item form-group">
+               <p>{{ form.Section|as_crispy_field }}</p>
+           </div>
+           <div class="item form-group">
+               <p>{{ form.Student_Name|as_crispy_field }}</p>
+           </div>
             <div class="item form-group">
-                <label >Fee Type</label>
-                {% render_field form.FeeType  class="form-control" %}
+                <p>{{ form.FeeType|as_crispy_field }}</p>
             </div>
             <div class="item form-group">
-                <label >Amount</label>
-                {% render_field form.FeeAmount  class="form-control" %}
+                <p>{{ form.FeeAmount|as_crispy_field }}</p>
             </div>
 
             <div class="item form-group">
-                <label >Month</label>
-                {% render_field form.Month  class="form-control" %}
+              <p>{{ form.Month|as_crispy_field }}</p>
             </div>
             <div class="item form-group">
-                <label >Discount applicable</label>
-                {% render_field form.IsApplicableDiscount  class="form-control" %}
+                <p>{{ form.PaidStatus|as_crispy_field }}</p>
             </div>
             <div class="item form-group">
-                <label >Status</label>
-                {% render_field form.PaidStatus class="form-control" %}
-            </div>
-            <div class="item form-group">
-                <label >Notes</label>
-                {% render_field form.Notes  class="form-control" %}
+                <p>{{ form.Notes|as_crispy_field }}</p>
             </div>
         </div>
         <div class="form-group">
             <button id="btnSubmit" class="btn btn-success" type="submit">Create</button>
         </div>
-
     </form>
-
 </div>
 </div>
 </div>
