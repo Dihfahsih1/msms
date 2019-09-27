@@ -53,13 +53,15 @@
     <form enctype="multipart/form-data" novalidate method="POST">
       {% csrf_token %}
         <div class="row">
-          <select name="selectclasses" id="selectclasses">
+          <select name="selectclasses" id="selectclasses" >
               {% for item in all_classes %}
               <option val="{{ item.ClassName }}"> {{ item.ClassName }} </option>
               {% endfor %}
           </select>
-          <select name ="selectsections" id="selectsections"></select>
-          <select name ="selectstudents" id="selectstudents"></select>
+          <select name ="selectsections" id="selectsections"  >
+
+          </select>
+          <select name ="selectstudents" id="selectstudents" ></select>
            <br><br>
            <div class="item form-group">
                <p>{{ form.Class|as_crispy_field }}</p>
@@ -76,7 +78,9 @@
             <div class="item form-group">
                 <p>{{ form.FeeAmount|as_crispy_field }}</p>
             </div>
-
+            <div class="item form-group">
+              <p>{{ form.IsApplicableDiscount|as_crispy_field }}</p>
+            </div>
             <div class="item form-group">
               <p>{{ form.Month|as_crispy_field }}</p>
             </div>
