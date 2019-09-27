@@ -6,10 +6,10 @@
   <!--script for the three dependent dropdowns-->
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script>$(document).ready(function(){
-           $('select#selectcountries').change(function () {
+           $('select#selectclasses').change(function () {
                var optionSelected = $(this).find("option:selected");
                var valueSelected  = optionSelected.val();
-               var country_name   = optionSelected.text();
+               var class_name   = optionSelected.text();
                data = {'cnt' : class_name };
                $.ajax({
                    type:"GET",
