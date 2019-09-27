@@ -46,48 +46,19 @@
 <br><br>
 {% load crispy_forms_tags %}
 <div class="col-lg-4" style="float:left">
-<form method="post" enctype="multipart/form-data" novalidate>
-  <select name="selectclasses" id="selectclasses">
-      {% for item in all_classes %}
-      <option val="{{ item.ClassName }}"> {{ item.ClassName }} </option>
-      {% endfor %}
-  </select>
-  <select name ="selectsections" id="selectsections">-------------</select>
-  <select name ="selectstudents" id="selectstudents">---------------</select>
 <p>Enter Details</p>
   {% csrf_token %}
   <div class="x_content">
-    <form id="myForm" method="GET"class="form-inline" data-school="{{ request.GET.School }}"data-classroom="{{ request.GET.Class }}"data-section="{{ request.GET.Section }}">
+    <form enctype="multipart/form-data" novalidate>
         <div class="row">
-
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="item form-group">
-                    <label for="schoolSelect">School</label>
-                    {% render_field form.School title="Schools" class="form-control" %}
-                </div>
-            </div>
-
-
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="item form-group">
-                    <label for="classroomSelect">Classroom</label>
-                    {% render_field form.Class title="Classrooms" class="form-control" %}
-                </div>
-            </div>
-
-
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="item form-group">
-                    <label for="sectionSelect">Section</label>
-                    {% render_field form.Section title="Section" class="form-control" %}
-                </div>
-            </div>
-
-
-            <div class="item form-group">
-                <label >Student Name</label>
-                {% render_field form.Student_Name  class="form-control" %}
-            </div>
+          <select name="selectclasses" id="selectclasses">
+              {% for item in all_classes %}
+              <option val="{{ item.ClassName }}"> {{ item.ClassName }} </option>
+              {% endfor %}
+          </select>
+          <select name ="selectsections" id="selectsections">-------------</select>
+          <select name ="selectstudents" id="selectstudents">---------------</select>
+<br><br>
             <div class="item form-group">
                 <label >Fee Type</label>
                 {% render_field form.FeeType  class="form-control" %}
