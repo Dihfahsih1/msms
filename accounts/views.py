@@ -1543,9 +1543,47 @@ def addfeecollection(request):
        form = AddFeeCollectionForm()
        context = {'form': form}
        return render(request, 'accounts/Accounting/addfeecollection.html', context)
-    class_context={'all_classes':all_classes}
-     return render(request, 'accounts/Accounting/addfeecollection.html', class_context)
-     
+   class_context={'all_classes':all_classes}
+   return render(request, 'accounts/Accounting/addfeecollection.html', class_context)
+
+def getSections(request):
+    if request.method == 'GET' and request.is_ajax():
+        class_name = request.GET.get('cnt', None)
+        print("ajax class_name ", class_name)
+        result_set = []
+        all_cities = []
+        answer = str(class_name[1:-1])
+        selected_class = Classinformation.objects.get(name=answer)
+        print("selected class name ", selected_class)
+        all_sections = selected_class.sections.all()
+        print("sections are: ", all_sections)
+        for section in all_sections:
+            print("section name", section.SectionName)
+            result_set.append({'name': section.SectionName})
+        return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
+        #return JsonResponse(result_set,status = 200)
+
+    else:
+        return redirect('/')
+def getStudents(request):
+    if request.method == 'GET' and request.is_ajax():
+        section_name = request.GET.get('ct', None)
+        print("ajax section_name ", section_name)
+        result_set = []
+        all_students = []
+        answer = str(section_name)
+        print('answer = ', answer)
+        selected_section = Sectioninformation.objects.get(name=answer)
+        print("selected Section name ", selected_section)
+        all_students = selected_section.students.all()
+        print("students are: ", all_students)
+        for student in all_students:
+            print("student name", student.name)
+            result_set.append({'name': student.name})
+        return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
+    else:
+        return redirect('/')
+
 
 def editfeecollection(request, pk):
    item = get_object_or_404(FeeType, id=pk)
