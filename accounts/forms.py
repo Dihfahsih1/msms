@@ -314,7 +314,7 @@ class AddGuardianForm(forms.ModelForm):
 class AddFeeCollectionForm(forms.ModelForm):
     class Meta:
         model = FeeCollection
-        fields = ('FeeType','FeeAmount','Month','IsApplicableDiscount','PaidStatus','Notes')
+        fields = ('Class','Section','Student_Name','FeeType','FeeAmount','Month','IsApplicableDiscount','PaidStatus','Notes')
 
 class AddDesignationForm(forms.ModelForm):
     class Meta:
