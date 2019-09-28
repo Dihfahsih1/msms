@@ -2,42 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-  <!--script for the three dependent dropdowns-->
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script>$(document).ready(function(){
-           $('select#selectclasses').change(function () {
-               var optionSelected = $(this).find("option:selected");
-               var valueSelected  = optionSelected.val();
-               var class_name   = optionSelected.text();
-               data = {'cnt' : class_name };
-               $.ajax({
-                   type:"GET",
-                   url:'getSections',
-                   data:data,
-                   success:function(result){
-                      console.log(result);
-                      $("#selectsections option").remove();
-                      for (var i = result.length - 1; i >= 0; i--) {
-                          $("#selectsections").append('<option>'+ result[i].name +'</option>');};},});});
-           $('select#selectsections').change(function () {
-               var optionSelected = $(this).find("option:selected");
-               var valueSelected  = optionSelected.val();
-               var section_name   = optionSelected.text();
-               data = {'ct' : section_name };
-               $.ajax({
-                   type:"GET",
-                   url:'getStudents',
-                   data:data,
-                   success:function(result){
-                      console.log(result);
-                     $("#selectstudents option").remove();
-                      for (var i = result.length - 1; i >= 0; i--) {
-                          $("#selectstudents").append('<option>'+ result[i].name +'</option>');
-                      };},});});});
-  </script>
-  <!--dependent dropdowns end-->
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--date picker-->
 <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.44/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
