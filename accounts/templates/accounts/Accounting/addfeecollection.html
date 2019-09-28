@@ -53,15 +53,15 @@
     <form enctype="multipart/form-data" novalidate method="POST">
       {% csrf_token %}
         <div class="row">
-        {{form.Class}} =  <select name="selectclasses" id="selectclasses" >
+        <select name="selectclasses" id="selectclasses" >
               {% for item in all_classes %}
               <option val="{{ item.ClassName }}"> {{ item.ClassName }} </option>
               {% endfor %}
           </select>
-        {{form.Section}}= <select name ="selectsections" id="selectsections">
+        <select name ="selectsections" id="selectsections">
 
           </select>
-          {{form.Student_Name}}=<select name ="selectstudents" id="selectstudents" ></select>
+          <select name ="selectstudents" id="selectstudents" ></select>
            <br><br>
 
             <div class="item form-group">
