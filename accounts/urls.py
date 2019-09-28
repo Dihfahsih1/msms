@@ -10,15 +10,10 @@ url(r'^ctry', views.ctry, name="ctry"),
 url(r'^getCity', views.getCity, name="getCity"),
 url(r'^getRoads', views.getRoads, name="getRoads"),
 
-url(r'^getSections', views.getSections, name="getSections"),
-url(r'^getStudents', views.getStudents, name="getStudents"),
-
 url(r'^login', views.login, name="login"),
 url(r'^createclassinformation', views.createclassinformation, name="createclassinformation"),
 url(r'^editclassinformation/(?P<pk>\d+)', views.editclassinformation, name="editclassinformation"),
 url(r'^viewclassinformation', views.viewclassinformation, name="viewclassinformation"),
-
-
 
 url(r'^createsectioninformation', views.createsectioninformation, name="createsectioninformation"),
 url(r'^editsectioninformation/(?P<pk>\d+)', views.editsectioninformation, name="editsectioninformation"),
