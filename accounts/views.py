@@ -485,8 +485,6 @@ def viewroute(request):
     context={'all_info':all_info}
     return render(request, 'accounts/Transport/viewroute.html', context)
 
-
-
   ################################################
 #   CRUD FOR THE HOSTEL INFORMATION MODULE
 def addhostel(request):
