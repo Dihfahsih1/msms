@@ -1528,41 +1528,7 @@ def load_students(request):
     students = DataStudent.objects.filter(Class_id=Class_id).order_by('name')
     return render(request, 'accounts/Accounting/students_dropdown_list.html', {'students': students})
 
-################################################
-#   CRUD FOR THE FEE COLLECTION MODULE
-def addfeecollection(request):
-   if request.method=="POST":
-       form=AddFeeCollectionForm(request.POST,request.FILES)
-       if form.is_valid():
-           form.save()
-           return redirect('addfeecollection')
-       #return HttpResponse("Form is not valid")
-   else:
-       form = AddFeeCollectionForm()
-       context = {'form': form}
-       return render(request, 'accounts/Accounting/addfeecollection.html', context)
 
-def editfeecollection(request, pk):
-   item = get_object_or_404(FeeType, id=pk)
-   if request.method == "POST":
-       form =  AddFeeCollectionForm(request.POST,request.FILES, instance=item)
-       if form.is_valid():
-           form.save()
-           return redirect('viewfeetype')
-   else:
-       form =  AddFeeCollectionForm(instance=item)
-       return render(request, 'accounts/Accounting/editfeecollection.html', {'form': form})
-
-def deletefeecollection(request, pk):
-   FeeCollection.objects.filter(id=pk).delete()
-   all_info=FeeCollection.objects.all()
-   context={'all_info' :all_info}
-   return render(request, 'accounts/Accounting/viewfeecollection.html', context)
-#
-def viewfeecollection(request):
-   all_info = FeeCollection.objects.all()
-   context={'all_info':all_info}
-   return render(request, 'accounts/Accounting/viewfeecollection.html', context)
 
 ################################################
 #   CRUD FOR DESIGNATION MODULE
@@ -1655,3 +1621,39 @@ def getRoads(request):
         return HttpResponse(simplejson.dumps(result_set), content_type='application/json')
     else:
         return redirect('/')
+
+################################################
+#   CRUD FOR THE FEE COLLECTION MODULE
+def addfeecollection(request):
+   if request.method=="POST":
+       form=AddFeeCollectionForm(request.POST,request.FILES)
+       if form.is_valid():
+           form.save()
+           return redirect('addfeecollection')
+       #return HttpResponse("Form is not valid")
+   else:
+       form = AddFeeCollectionForm()
+       context = {'form': form}
+       return render(request, 'accounts/Accounting/addfeecollection.html', context)
+
+def editfeecollection(request, pk):
+   item = get_object_or_404(FeeType, id=pk)
+   if request.method == "POST":
+       form =  AddFeeCollectionForm(request.POST,request.FILES, instance=item)
+       if form.is_valid():
+           form.save()
+           return redirect('viewfeetype')
+   else:
+       form =  AddFeeCollectionForm(instance=item)
+       return render(request, 'accounts/Accounting/editfeecollection.html', {'form': form})
+
+def deletefeecollection(request, pk):
+   FeeCollection.objects.filter(id=pk).delete()
+   all_info=FeeCollection.objects.all()
+   context={'all_info' :all_info}
+   return render(request, 'accounts/Accounting/viewfeecollection.html', context)
+#
+def viewfeecollection(request):
+   all_info = FeeCollection.objects.all()
+   context={'all_info':all_info}
+   return render(request, 'accounts/Accounting/viewfeecollection.html', context)
