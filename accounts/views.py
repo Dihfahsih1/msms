@@ -1684,3 +1684,18 @@ def invoice_create(request):
         'form': form,
     }
     return render(request, 'accounts/Accounting/Addfeescollection.html', context)
+
+def load_classrooms(request):
+    school_id = request.GET.get('school')
+    classrooms = ClassInformation.objects.filter(School_id=school_id).order_by('Class')
+    return render(request, 'filter/classroom_dropdown_list_options.html', {'classrooms': classrooms})
+
+def load_fee_types(request):
+    school_id = request.GET.get('school')
+    fee_types = FeeType.objects.filter(School_id=school_id).order_by('FeeType')
+    return render(request, 'filter/fee_dropdown_list_options.html', {'fee_types': fee_types})
+
+def load_students(request):
+    classroom_id = request.GET.get('classroom')
+    students = DataStudent.objects.filter(Class_id=classroom_id).order_by('name')
+    return render(request, 'filter/student_dropdown_list_options.html', {'students': students})
