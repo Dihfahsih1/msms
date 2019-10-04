@@ -346,7 +346,7 @@ class DataStudent(models.Model):
     Mother_Photo = models.ImageField(upload_to="gallery", default="text")
     def __str__(self):
         return self.name
-
+#roll
 class StudentPresence(models.Model):
     attend = (('1','Present'), ('0','Absent'))
     Student_Name = models.ForeignKey(DataStudent,on_delete=models.PROTECT, blank=False)
