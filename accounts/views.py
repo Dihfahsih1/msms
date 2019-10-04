@@ -1,5 +1,5 @@
 from django.shortcuts import *
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, FormView
 from .models import *
 from .forms import *
 from django.contrib import messages
@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 import json as simplejson
 from django.http import HttpResponse
 from .mixins import AjaxFormMixin
+
 
 def home(request):
     return render(request, 'accounts/home.html')
@@ -1625,7 +1626,7 @@ def getRoads(request):
 
 ################################################
 #   CRUD FOR THE FEE COLLECTION MODULE
-class addfeecollection(Formview):
+class Addfeescollection(FormView):
     form_class = 'AddFeeCollectionForm'
     template_name = 'Accountant/addfeecollection.html'
     success_url = '/form-success/'

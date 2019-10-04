@@ -2,6 +2,7 @@ from django.urls import path
 from django.conf.urls import url, include
 from . import views
 from .views import DesignationDeleteView
+from .views import FormView
 from django_filters.views import FilterView
 urlpatterns=[
 
@@ -164,6 +165,7 @@ url(r'^editdesignation/(?P<pk>\d+)', views.editdesignation, name="editdesignatio
 url(r'^deletedesignation/(?P<pk>\d+)', views.deletedesignation, name="deletedesignation"),
 url(r'^viewdesignations', views.viewdesignations, name="viewdesignations"),
 path('designation/<int:pk>/delete/', DesignationDeleteView.as_view(), name='designation-delete'),
+path('Create/$', Addfeescollection.as_view(), name='Addfeescollection'),
 
 url(r'^addstudent', views.addstudent, name="addstudent"),
 url(r'^editstudent/(?P<pk>\d+)', views.editstudent, name="editstudent"),
