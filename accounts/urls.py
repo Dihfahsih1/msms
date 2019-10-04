@@ -236,4 +236,5 @@ url(r'^search_student', views.search_student, name="search_student"),
 url(r'^logout', views.login, name="logout"),
 path('Addfeescollection', Addfeescollection.as_view(), name='Addfeescollection'),
 url(r'^accounting/invoice/add/$', views.invoice_create, name='invoice_create'),
+path('ajax/load-classrooms/', views.load_classrooms, name='ajax_load_classrooms'),
 ]
