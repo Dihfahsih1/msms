@@ -7,6 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 import json as simplejson
 from django.http import HttpResponse
+from .mixins import AjaxFormMixin
 
 def home(request):
     return render(request, 'accounts/home.html')
@@ -1624,17 +1625,10 @@ def getRoads(request):
 
 ################################################
 #   CRUD FOR THE FEE COLLECTION MODULE
-def addfeecollection(request):
-   if request.method=="POST":
-       form=AddFeeCollectionForm(request.POST,request.FILES)
-       if form.is_valid():
-           form.save()
-           return redirect('addfeecollection')
-       #return HttpResponse("Form is not valid")
-   else:
-       form = AddFeeCollectionForm()
-       context = {'form': form}
-       return render(request, 'accounts/Accounting/addfeecollection.html', context)
+class addfeecollection(Formview):
+    form_class = 'AddFeeCollectionForm'
+    template_name = 'Accountant/addfeecollection.html'
+    success_url = '/form-success/'
 
 def editfeecollection(request, pk):
    item = get_object_or_404(FeeType, id=pk)
