@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf.urls import url, include
 from . import views
 from .views import DesignationDeleteView
-from .views import FormView
+from .views import Addfeescollection
 from django_filters.views import FilterView
 urlpatterns=[
 
@@ -115,7 +115,6 @@ url(r'^editfeetype/(?P<pk>\d+)', views.editfeetype, name="editfeetype"),
 url(r'^deletefeetype/(?P<pk>\d+)', views.deletefeetype, name="deletefeetype"),
 url(r'^viewfeetype', views.viewfeetype, name="viewfeetype"),
 
-url(r'^addfeecollection', views.addfeecollection, name="addfeecollection"),
 url(r'^editfeecollection/(?P<pk>\d+)', views.editfeecollection, name="editfeecollection"),
 url(r'^deletefeecollection/(?P<pk>\d+)', views.deletefeecollection, name="deletefeecollection"),
 url(r'^viewfeecollection', views.viewfeecollection, name="viewfeecollection"),
@@ -165,7 +164,7 @@ url(r'^editdesignation/(?P<pk>\d+)', views.editdesignation, name="editdesignatio
 url(r'^deletedesignation/(?P<pk>\d+)', views.deletedesignation, name="deletedesignation"),
 url(r'^viewdesignations', views.viewdesignations, name="viewdesignations"),
 path('designation/<int:pk>/delete/', DesignationDeleteView.as_view(), name='designation-delete'),
-path('Create/$', Addfeescollection.as_view(), name='Addfeescollection'),
+
 
 url(r'^addstudent', views.addstudent, name="addstudent"),
 url(r'^editstudent/(?P<pk>\d+)', views.editstudent, name="editstudent"),
@@ -234,5 +233,6 @@ url(r'^students_of_guardian_in_form_five', views.students_of_guardian_in_form_fi
 url(r'^students_of_guardian_in_form_six', views.students_of_guardian_in_form_six, name="students_of_guardian_in_form_six"),
 
 url(r'^search_student', views.search_student, name="search_student"),
-url(r'^logout', views.login, name="logout")
+url(r'^logout', views.login, name="logout"),
+path('Addfeescollection', Addfeescollection.as_view(), name='Addfeescollection'),
 ]
