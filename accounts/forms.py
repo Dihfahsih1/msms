@@ -2,6 +2,12 @@ from django import forms
 from .models import *
 from django.forms.widgets import RadioSelect
 import django_filters
+from django import forms
+from django.forms import Textarea
+from django.db import transaction
+from .models import *
+from bootstrap_datepicker_plus import DatePickerInput, TimePickerInput, MonthPickerInput
+from django.forms.widgets import CheckboxSelectMultiple
 class LoginForm(forms.ModelForm):
     class Meta:
         model = Login
@@ -358,7 +364,7 @@ class InvoiceForm(forms.ModelForm):
                 self.fields['student'].queryset = self.instance.classroom.student_set.order_by('student')
 
             # if 'fee_type' in self.data:
-            #     try:   
+            #     try:
             #         fee_type_id = int(self.data.get('fee_type'))
             #         self.fields['fee_amount'].queryset = F.objects.filter(classroom_id=classroom_id).order_by(
             #             'classroom')
