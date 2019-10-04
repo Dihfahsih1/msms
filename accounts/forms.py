@@ -358,7 +358,7 @@ class InvoiceForm(forms.ModelForm):
                 self.fields['student'].queryset = self.instance.classroom.student_set.order_by('student')
 
             # if 'fee_type' in self.data:
-            #     try:
+            #     try:   
             #         fee_type_id = int(self.data.get('fee_type'))
             #         self.fields['fee_amount'].queryset = F.objects.filter(classroom_id=classroom_id).order_by(
             #             'classroom')
