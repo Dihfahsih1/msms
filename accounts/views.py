@@ -1628,7 +1628,7 @@ def getRoads(request):
 #   CRUD FOR THE FEE COLLECTION MODULE
 class Addfeescollection(FormView):
     form_class = AddFeeCollectionForm
-    template_name = 'Accounting/Addfeescollection.html'
+    template_name = 'accounts/Accounting/Addfeescollection.html'
     success_url = '/form-success/'
 
 def editfeecollection(request, pk):
