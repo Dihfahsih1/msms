@@ -320,3 +320,52 @@ class AddDesignationForm(forms.ModelForm):
     class Meta:
         model = Designation
         fields=('Name', 'Notes')
+
+
+class InvoiceForm(forms.ModelForm):
+    class Meta:
+        model = Invoice
+        fields = ('school', 'classroom', 'student', 'fee_type', 'fee_amount', 'discount', 'month',
+                  'is_discount_applicable', 'paid_status', 'gross_amount', 'invoice_number', 'note', 'date')
+
+        widgets = {
+            'note': Textarea(attrs={'cols': 30, 'rows': 2}),
+            'month': MonthPickerInput(),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['classroom'].queryset = Classinformation.objects.none()
+        self.fields['fee_type'].queryset = FeeType.objects.none()
+        self.fields['student'].queryset = DataStudent.objects.none()
+
+        if 'school' in self.data:
+            try:
+                school_id = int(self.data.get('school'))
+                self.fields['fee_type'].queryset = FeeType.objects.filter(School_id=school_id).order_by('school')
+                self.fields['classroom'].queryset = Classinformation.objects.filter(School_id=school_id).order_by('school')
+            except (ValueError, TypeError):
+                pass
+
+            if 'classroom' in self.data:
+                try:
+                    classroom_id = int(self.data.get('classroom'))
+                    self.fields['student'].queryset = DataStudent.objects.filter(Class_id=classroom_id).order_by(
+                        'Class')
+                except (ValueError, TypeError):
+                    pass
+            elif self.instance.pk:
+                self.fields['student'].queryset = self.instance.classroom.student_set.order_by('student')
+
+            # if 'fee_type' in self.data:
+            #     try:
+            #         fee_type_id = int(self.data.get('fee_type'))
+            #         self.fields['fee_amount'].queryset = F.objects.filter(classroom_id=classroom_id).order_by(
+            #             'classroom')
+            #     except (ValueError, TypeError):
+            #         pass
+            # elif self.instance.pk:
+            #     self.fields['student'].queryset = self.instance.classroom.student_set.order_by('student')
+
+        elif self.instance.pk:
+            self.fields['classroom'].queryset = self.instance.school.classroom_set.order_by('classroom')
