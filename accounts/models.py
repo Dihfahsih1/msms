@@ -465,3 +465,22 @@ class Road(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='roads')
     def __str__(self):
         return str(self.name)
+
+class Invoice(models.Model):
+    school = models.ForeignKey(School, on_delete=models.CASCADE, blank=False, null=True)
+    classroom = models.ForeignKey(Classinformation, on_delete=models.CASCADE, blank=False, null=True)
+    student = models.ForeignKey(DataStudent, on_delete=models.CASCADE, blank=False, null=True)
+    fee_type = models.CharField(max_length=100)
+    fee_amount = models.CharField(max_length=100)
+    discount = models.CharField(max_length=100)
+    month = models.DateField(max_length=100)
+    IS = (('Yes', 'Yes'),
+          ('No', 'No'))
+    is_discount_applicable = models.CharField(max_length=100, blank=False, choices=IS)
+    STATUS = (('Paid', 'Paid'),
+              ('Pending', 'Pending'))
+    paid_status = models.CharField(max_length=100, blank=False, choices=STATUS)
+    gross_amount = models.CharField(max_length=100)
+    invoice_number = models.CharField(max_length=100)
+    note = models.TextField(max_length=300)
+    date = models.DateField(null=True)
