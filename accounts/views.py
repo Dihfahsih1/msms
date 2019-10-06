@@ -1653,7 +1653,7 @@ def viewfeecollection(request):
    context={'all_info':all_info}
    return render(request, 'accounts/Accounting/viewfeecollection.html', context)
 
-
+#function of creating the invoice.
 def invoice_create(request):
     form = InvoiceForm(request.POST or None, request.FILES or None)
     def get_form(self):
