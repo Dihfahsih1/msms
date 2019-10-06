@@ -1680,9 +1680,7 @@ def invoice_create(request):
         invoice.save()
         invoice_url = reverse('viewfeecollection')
         return redirect(invoice_url)
-    context = {
-        'form': form,
-    }
+    context = {'form': form}
     return render(request, 'accounts/Accounting/Addfeescollection.html', context)
 
 def load_classrooms(request):
