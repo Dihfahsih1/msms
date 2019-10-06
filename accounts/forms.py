@@ -327,7 +327,7 @@ class AddDesignationForm(forms.ModelForm):
         model = Designation
         fields=('Name', 'Notes')
 
-
+#form fields for creating the invoice
 class InvoiceForm(forms.ModelForm):
     class Meta:
         model = Invoice
